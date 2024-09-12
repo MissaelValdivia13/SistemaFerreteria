@@ -1,0 +1,16 @@
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\obj\Debug\CapaNegocio.csproj.AssemblyReference.cache
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\obj\Debug\CapaNegocio.Properties.Resources.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\obj\Debug\CapaNegocio.csproj.GenerateResource.cache
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaNegocio.dll.config
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaEntidad.dll
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaDatos.pdb
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaDatos.dll.config
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaEntidad.pdb
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\bin\Debug\CapaEntidad.dll.config
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaNegocio\obj\Debug\CapaNegocio.pdb

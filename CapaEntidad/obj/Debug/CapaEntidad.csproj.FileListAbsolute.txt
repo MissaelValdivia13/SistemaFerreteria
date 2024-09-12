@@ -1,0 +1,9 @@
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\obj\Debug\CapaEntidad.csproj.AssemblyReference.cache
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\obj\Debug\CapaEntidad.Properties.Resources.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\obj\Debug\CapaEntidad.csproj.GenerateResource.cache
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\obj\Debug\CapaEntidad.csproj.CoreCompileInputs.cache
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\bin\Debug\CapaEntidad.dll.config
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\bin\Debug\CapaEntidad.dll
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\bin\Debug\CapaEntidad.pdb
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\obj\Debug\CapaEntidad.dll
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\CapaEntidad\obj\Debug\CapaEntidad.pdb
