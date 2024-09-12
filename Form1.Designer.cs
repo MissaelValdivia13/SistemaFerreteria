@@ -38,6 +38,7 @@
             this.btnCatalagos = new FontAwesome.Sharp.IconMenuItem();
             this.btnClientes = new FontAwesome.Sharp.IconMenuItem();
             this.btnProveedores = new FontAwesome.Sharp.IconMenuItem();
+            this.btnCategoria = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -116,6 +117,7 @@
             this.btnCatalagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
             this.btnCatalagos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnClientes,
+            this.btnCategoria,
             this.btnProveedores});
             this.btnCatalagos.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.5F);
             this.btnCatalagos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
@@ -155,6 +157,18 @@
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
+            // btnCategoria
+            // 
+            this.btnCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnCategoria.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
+            this.btnCategoria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCategoria.IconSize = 60;
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(180, 28);
+            this.btnCategoria.Text = "Categoría";
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -187,6 +201,7 @@
         private System.Windows.Forms.Panel pnPrincipal;
         private FontAwesome.Sharp.IconMenuItem btnClientes;
         private FontAwesome.Sharp.IconMenuItem btnProveedores;
+        private FontAwesome.Sharp.IconMenuItem btnCategoria;
     }
 }
 

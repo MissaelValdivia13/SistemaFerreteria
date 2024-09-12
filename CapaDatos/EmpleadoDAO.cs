@@ -9,35 +9,38 @@ using System.Windows.Forms;
 
 namespace CapaDatos
 {
-    public class CategoriaDAO
+    public class EmpleadoDAO
     {
         private Conexion objConecta = new Conexion();
         private SqlConnection conec;
         private SqlDataAdapter adaptador;
         private SqlCommand comando;
-        public DataSet consultarCategoria()
+
+        public DataSet consultaEmpleados()
         {
-            using (DataSet data = new DataSet())
+            using (DataSet data =  new DataSet())
             {
                 conec = objConecta.Conecta();
-                adaptador = new SqlDataAdapter("CONSULTACATEGORIAS", conec);
+                adaptador = new SqlDataAdapter("CONSULTAEMPLEADO", conec);
                 adaptador.Fill(data, "SUBE");
                 conec.Close();
                 return data;
             }
         }
 
-        public void subeCategoria(string concepto)
+        public void subeEmpleado(string nombre, string puesto, string telefono)
         {
             try
             {
                 conec = objConecta.Conecta();
-                adaptador =  new SqlDataAdapter("SUBECATEGORIA",conec);
+                adaptador = new SqlDataAdapter("SUBEEMPLEADO", conec);
                 adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-                adaptador.SelectCommand.Parameters.Add("@Concepto", SqlDbType.VarChar).Value = concepto;
+                adaptador.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
+                adaptador.SelectCommand.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = puesto;
+                adaptador.SelectCommand.Parameters.Add("Telefono", SqlDbType.VarChar).Value = telefono;
                 adaptador.SelectCommand.ExecuteNonQuery();
-            }
-            catch(Exception e)
+
+            }catch(Exception e)
             {
                 MessageBox.Show(e.Message);
             }
@@ -48,15 +51,14 @@ namespace CapaDatos
             }
         }
 
-        public int nuevaCategoria()
+        public int nuevoEmpleado()
         {
             int totalRegistros = -1;
             try
             {
                 conec = objConecta.Conecta();
-                comando = new SqlCommand("NUEVACATEGORIA",conec);
-                totalRegistros = Convert.ToInt32(comando.ExecuteScalar())+1;
-
+                comando = new SqlCommand("NUEVOEMPLEADO", conec);
+                totalRegistros = Convert.ToInt32(comando.ExecuteScalar());
             }catch(Exception e)
             {
                 MessageBox.Show(e.Message);
@@ -67,5 +69,6 @@ namespace CapaDatos
             }
             return totalRegistros;
         }
+
     }
 }

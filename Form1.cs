@@ -55,5 +55,11 @@ namespace SistemaFerreteria
             frmProveedor proveedor = new frmProveedor();
             AbrirFrom(proveedor);
         }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            frmCategoria categoria = new frmCategoria();
+            AbrirFrom(categoria);
+        }
     }
 }

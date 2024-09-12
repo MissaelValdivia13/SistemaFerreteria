@@ -158,6 +158,7 @@
     <Compile Include="CategoriaDAO.cs" />
     <Compile Include="ClienteDAO.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="EmpleadoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresDAO.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
