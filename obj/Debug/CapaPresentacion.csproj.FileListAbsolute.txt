@@ -22,3 +22,4 @@ C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\Sis
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\bin\Debug\CapaEntidad.dll.config
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmProveedor.resources
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmCategoria.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmEmpleado.resources

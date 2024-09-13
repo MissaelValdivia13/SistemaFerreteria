@@ -58,7 +58,7 @@ namespace CapaDatos
             {
                 conec = objConecta.Conecta();
                 comando = new SqlCommand("NUEVOEMPLEADO", conec);
-                totalRegistros = Convert.ToInt32(comando.ExecuteScalar());
+                totalRegistros = Convert.ToInt32(comando.ExecuteScalar())+1;
             }catch(Exception e)
             {
                 MessageBox.Show(e.Message);

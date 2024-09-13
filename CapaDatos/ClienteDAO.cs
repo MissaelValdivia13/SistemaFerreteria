@@ -73,6 +73,29 @@ namespace CapaDatos
             return totalRegistros;
         }
 
+        public void actualizaCliente(int id, string nombre, string telefono, string email, string domicilio)
+        {
+            try
+            {
+                conec =  objConecta.Conecta();
+                adaptador = new SqlDataAdapter("ACTUALIZACLIENTE", conec);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adaptador.SelectCommand.Parameters.Add("@IdCliente", SqlDbType.VarChar).Value = id;
+                adaptador.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
+                adaptador.SelectCommand.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = telefono;
+                adaptador.SelectCommand.Parameters.Add("@Email", SqlDbType.VarChar).Value = email;
+                adaptador.SelectCommand.Parameters.Add("@Domicilio", SqlDbType.VarChar).Value = domicilio;
+                adaptador.SelectCommand.ExecuteNonQuery();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conec.Close();
+            }
+        }
 
     }
 }

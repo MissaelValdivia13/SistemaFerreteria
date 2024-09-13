@@ -33,12 +33,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnPrincipal = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.catalagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnCatalagos = new FontAwesome.Sharp.IconMenuItem();
             this.btnClientes = new FontAwesome.Sharp.IconMenuItem();
             this.btnProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.btnCategoria = new FontAwesome.Sharp.IconMenuItem();
+            this.btnEmpleado = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -89,8 +88,6 @@
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.catalagosToolStripMenuItem,
-            this.categoriasToolStripMenuItem,
             this.btnCatalagos});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -98,25 +95,13 @@
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // catalagosToolStripMenuItem
-            // 
-            this.catalagosToolStripMenuItem.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.catalagosToolStripMenuItem.Name = "catalagosToolStripMenuItem";
-            this.catalagosToolStripMenuItem.Size = new System.Drawing.Size(12, 77);
-            this.catalagosToolStripMenuItem.Click += new System.EventHandler(this.catalagosToolStripMenuItem_Click);
-            // 
-            // categoriasToolStripMenuItem
-            // 
-            this.categoriasToolStripMenuItem.Font = new System.Drawing.Font("Mongolian Baiti", 14.25F, System.Drawing.FontStyle.Bold);
-            this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
-            this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(12, 77);
-            // 
             // btnCatalagos
             // 
             this.btnCatalagos.AutoSize = false;
             this.btnCatalagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
             this.btnCatalagos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnClientes,
+            this.btnEmpleado,
             this.btnCategoria,
             this.btnProveedores});
             this.btnCatalagos.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.5F);
@@ -126,7 +111,7 @@
             this.btnCatalagos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCatalagos.IconSize = 55;
             this.btnCatalagos.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnCatalagos.Margin = new System.Windows.Forms.Padding(1);
+            this.btnCatalagos.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
             this.btnCatalagos.Name = "btnCatalagos";
             this.btnCatalagos.Size = new System.Drawing.Size(122, 70);
             this.btnCatalagos.Text = "Catálogos";
@@ -169,6 +154,18 @@
             this.btnCategoria.Text = "Categoría";
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
+            // btnEmpleado
+            // 
+            this.btnEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnEmpleado.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
+            this.btnEmpleado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEmpleado.IconSize = 60;
+            this.btnEmpleado.Name = "btnEmpleado";
+            this.btnEmpleado.Size = new System.Drawing.Size(180, 28);
+            this.btnEmpleado.Text = "Empleado";
+            this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,13 +192,12 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem catalagosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem categoriasToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem btnCatalagos;
         private System.Windows.Forms.Panel pnPrincipal;
         private FontAwesome.Sharp.IconMenuItem btnClientes;
         private FontAwesome.Sharp.IconMenuItem btnProveedores;
         private FontAwesome.Sharp.IconMenuItem btnCategoria;
+        private FontAwesome.Sharp.IconMenuItem btnEmpleado;
     }
 }
 

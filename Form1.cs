@@ -61,5 +61,11 @@ namespace SistemaFerreteria
             frmCategoria categoria = new frmCategoria();
             AbrirFrom(categoria);
         }
+
+        private void btnEmpleado_Click(object sender, EventArgs e)
+        {
+            frmEmpleado empleado = new frmEmpleado();
+            AbrirFrom(empleado);
+        }
     }
 }
