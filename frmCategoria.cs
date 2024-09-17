@@ -21,17 +21,7 @@ namespace SistemaFerreteria
 
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            DataSet ds = categoria.consultarCategoria();
-
-            if (ds.Tables.Count > 0)
-            {
-                dtwCategoria.DataSource = ds.Tables[0];
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron datos para mostrar.");
-            }
-            dtwCategoria.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            llenarDtw();
         }
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
@@ -39,6 +29,8 @@ namespace SistemaFerreteria
             limpiarCampos();
             txtConcepto.Enabled = true;
             txtIdCategoria.Text =Convert.ToString(categoria.nuevaCategoria());
+            btnGrabar.Enabled = true;
+            btnModificar.Enabled = false;
         }
 
         private void limpiarCampos()
@@ -53,12 +45,48 @@ namespace SistemaFerreteria
             categoria.subeCategoria(txtConcepto.Text);
             limpiarCampos();
             txtConcepto.Enabled = false;
-            frmCategoria_Load(sender, e);
+            llenarDtw();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             limpiarCampos();
+        }
+
+        private void dtwCategoria_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                txtIdCategoria.Text = dtwCategoria.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtConcepto.Text = dtwCategoria.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtConcepto.Enabled = true;
+                btnModificar.Enabled = true;
+                btnGrabar.Enabled = false;
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            categoria.actualizaCategoria(Convert.ToInt32(txtIdCategoria.Text), txtConcepto.Text);
+            limpiarCampos();
+            txtConcepto.Enabled = false;
+            btnModificar.Enabled = false;
+            llenarDtw();
+        }
+
+        private void llenarDtw()
+        {
+            DataSet ds = categoria.consultarCategoria();
+
+            if (ds.Tables.Count > 0)
+            {
+                dtwCategoria.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron datos para mostrar.");
+            }
+            dtwCategoria.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }

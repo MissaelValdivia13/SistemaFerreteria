@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +26,11 @@ namespace CapaNegocio
         public int nuevaCategoria()
         {
             return objCategoria.nuevaCategoria();
+        }
+
+        public void actualizaCategoria(int idCategoria, string concepto)
+        {
+            objCategoria.actualizaCategoria(idCategoria, concepto);
         }
     }
 }

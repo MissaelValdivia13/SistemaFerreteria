@@ -67,5 +67,25 @@ namespace CapaDatos
             }
             return totalRegistros;
         }
+
+        public void actualizaCategoria(int idCategoria, string concepto)
+        {
+            try
+            {
+                conec = objConecta.Conecta();
+                adaptador = new SqlDataAdapter("MODIFICACATEGORIA", conec);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adaptador.SelectCommand.Parameters.Add("@IdCategoria", SqlDbType.Int).Value = idCategoria;
+                adaptador.SelectCommand.Parameters.Add("@Concepto", SqlDbType.VarChar).Value =  concepto;
+                adaptador.SelectCommand.ExecuteNonQuery();
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conec.Close();
+            }
+        }
     }
 }
