@@ -29,5 +29,10 @@ namespace CapaNegocio
             return empleado.nuevoEmpleado();
         }
 
+        public void actualizaEmpleado(int idEmpleado, string nombre, string puesto, string telefono)
+        {
+            empleado.actualizaEmpleado(idEmpleado, nombre, puesto, telefono);
+        }
+
     }
 }

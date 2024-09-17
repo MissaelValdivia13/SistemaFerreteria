@@ -77,5 +77,28 @@ namespace SistemaFerreteria
             limpiarCampos();
             habilitarDesabilitar(false);
         }
+
+        private void dtwEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                txtIdEmpleado.Text = dtwEmpleado.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtNombre.Text = dtwEmpleado.Rows[e.RowIndex].Cells[1].Value.ToString();
+                cboPuesto.Text = dtwEmpleado.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtTelefono.Text = dtwEmpleado.Rows[e.RowIndex].Cells[3].Value.ToString();
+                btnModificar.Enabled = true;
+                btnGrabar.Enabled = false;
+                habilitarDesabilitar(true);
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            empleado.actualizaEmpleado(Convert.ToInt32(txtIdEmpleado.Text), txtNombre.Text, cboPuesto.Text, txtTelefono.Text);
+            habilitarDesabilitar(false);
+            limpiarCampos();
+            llenarData();
+            btnModificar.Enabled = false;
+        }
     }
 }
