@@ -84,7 +84,7 @@ namespace CapaDatos
                 adaptador.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
                 adaptador.SelectCommand.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = telefono;
                 adaptador.SelectCommand.Parameters.Add("@Email", SqlDbType.VarChar).Value = email;
-                adaptador.SelectCommand.Parameters.Add("@Domicilio", SqlDbType.VarChar).Value = domicilio;
+                adaptador.SelectCommand.Parameters.Add("@Domiclio", SqlDbType.VarChar).Value = domicilio;
                 adaptador.SelectCommand.ExecuteNonQuery();
             }
             catch(Exception e)

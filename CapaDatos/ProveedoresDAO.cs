@@ -72,5 +72,28 @@ namespace CapaDatos
             }
             return totalRegistros;
         }
+        public void actualizaProveedor(int idProveedor, string empresa, string contacto, string telefono, string direccion)
+        {
+            try
+            {
+                conec = objConecta.Conecta();
+                adaptador = new SqlDataAdapter("MODIFICAPROVEEDOR", conec);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adaptador.SelectCommand.Parameters.Add("@IdProveedor", SqlDbType.Int).Value = idProveedor;
+                adaptador.SelectCommand.Parameters.Add("@Empresa", SqlDbType.VarChar).Value = empresa;
+                adaptador.SelectCommand.Parameters.Add("@Contacto", SqlDbType.VarChar).Value = contacto;
+                adaptador.SelectCommand.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = telefono;
+                adaptador.SelectCommand.Parameters.Add("@Direccion", SqlDbType.VarChar).Value = direccion;
+                adaptador.SelectCommand.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            finally
+            {
+                conec.Close();
+            }
+        }
     }
 }

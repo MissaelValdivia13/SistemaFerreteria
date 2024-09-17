@@ -26,5 +26,9 @@ namespace CapaNegocio
             return objProveedor.nuevoProveedor();
         }
 
+        public void actualizaProveedor(int idProveedor, string empresa, string contacto, string telefono, string direccion)
+        {
+            objProveedor.actualizaProveedor(idProveedor,empresa,contacto,telefono,direccion);
+        }
     }
 }

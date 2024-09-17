@@ -44,22 +44,13 @@ namespace SistemaFerreteria
         {
             proveedores.subeProveedor(txtEmpresa.Text, txtContacto.Text, txtTelefono.Text, txtDomicilio.Text);
             limpiarCampos();
-            frmProveedor_Load(sender, e);
+            llenarDtw();
             habilitarDeshabilitar(false);
         }
 
         private void frmProveedor_Load(object sender, EventArgs e)
         {
-            DataSet ds = proveedores.consultaProveedores();
-            if(ds.Tables.Count > 0)
-            {
-                dtwProveedores.DataSource = ds.Tables[0];
-            }
-            else
-            {
-                MessageBox.Show("No se encontraron datos para mostrar");
-            }
-            dtwProveedores.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            llenarDtw();
         }
 
         private void habilitarDeshabilitar(Boolean opcion)
@@ -68,6 +59,43 @@ namespace SistemaFerreteria
             txtDomicilio.Enabled = opcion;
             txtEmpresa.Enabled = opcion;
             txtTelefono.Enabled = opcion;
+        }
+
+        private void dtwProveedores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex != -1)
+            {
+                txtIdProveedor.Text = dtwProveedores.Rows[e.RowIndex].Cells[0].Value.ToString();
+                txtEmpresa.Text = dtwProveedores.Rows[e.RowIndex].Cells[1].Value.ToString();
+                txtContacto.Text = dtwProveedores.Rows[e.RowIndex].Cells[2].Value.ToString();
+                txtTelefono.Text = dtwProveedores.Rows[e.RowIndex].Cells[3].Value.ToString();
+                txtDomicilio.Text = dtwProveedores.Rows[e.RowIndex].Cells[4].Value.ToString();
+                btnModificar.Enabled = true;
+                habilitarDeshabilitar(true);
+            }
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            proveedores.actualizaProveedor(Convert.ToInt32(txtIdProveedor.Text), txtEmpresa.Text,txtContacto.Text, txtTelefono.Text, txtDomicilio.Text);
+            llenarDtw();
+            limpiarCampos();
+            habilitarDeshabilitar(false);
+            btnModificar.Enabled = false;
+        }
+
+        private void llenarDtw()
+        {
+            DataSet ds = proveedores.consultaProveedores();
+            if (ds.Tables.Count > 0)
+            {
+                dtwProveedores.DataSource = ds.Tables[0];
+            }
+            else
+            {
+                MessageBox.Show("No se encontraron datos para mostrar");
+            }
+            dtwProveedores.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
     }
 }
