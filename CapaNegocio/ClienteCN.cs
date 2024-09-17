@@ -30,5 +30,10 @@ namespace CapaNegocio
         {
             return objCliente.nuevoCliente();
         }
+
+        public void actualizarCliente(int idCliente, string nombre, string Telefono, string email, string domicilio)
+        {
+            objCliente.actualizaCliente(idCliente, nombre, Telefono, email, domicilio);
+        }
     }
 }
