@@ -34,6 +34,7 @@ namespace SistemaFerreteria
             llenarDtw();
             habilitarDesabilitar(false);
             limpiarCampos();
+            btnGrabar.Enabled = false;
         }
 
         private void btnNuevoCliente_Click(object sender, EventArgs e)
@@ -42,6 +43,7 @@ namespace SistemaFerreteria
             txtIdCliente.Text = Convert.ToString(cliente.nuevoCLiente());
             habilitarDesabilitar(true);
             btnModificar.Enabled = false;
+            btnGrabar.Enabled = true;
         }
 
         private void habilitarDesabilitar(Boolean opcion)
@@ -59,6 +61,8 @@ namespace SistemaFerreteria
             txtIdCliente.Text = "";
             txtNombre.Text = "";
             txtTelefono.Text = "";
+            habilitarDesabilitar(false);
+            btnGrabar.Enabled = false;
         }
 
         private void iconButton1_Click(object sender, EventArgs e)

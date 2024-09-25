@@ -59,6 +59,7 @@ namespace SistemaFerreteria
             limpiarCampos();
             habilitarDesabilitar(true);
             txtIdEmpleado.Text = Convert.ToString(empleado.nuevoEmpleado());
+            btnGrabar.Enabled = true;
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -99,6 +100,11 @@ namespace SistemaFerreteria
             limpiarCampos();
             llenarData();
             btnModificar.Enabled = false;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

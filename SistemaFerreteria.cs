@@ -11,9 +11,9 @@ using CapaNegocio;
 
 namespace SistemaFerreteria
 {
-    public partial class Form1 : Form
+    public partial class SistemaFerreteria : Form
     {
-        public Form1()
+        public SistemaFerreteria()
         {
             InitializeComponent();
         }
@@ -66,6 +66,11 @@ namespace SistemaFerreteria
         {
             frmEmpleado empleado = new frmEmpleado();
             AbrirFrom(empleado);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

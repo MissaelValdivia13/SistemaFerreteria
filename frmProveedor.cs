@@ -38,6 +38,8 @@ namespace SistemaFerreteria
             limpiarCampos();
             habilitarDeshabilitar(true);
             txtIdProveedor.Text = Convert.ToString(proveedores.nuevoProveedor());
+            btnGrabar.Enabled = true;
+            btnModificar.Enabled = false;
         }
 
         private void btnGrabar_Click(object sender, EventArgs e)
@@ -72,6 +74,7 @@ namespace SistemaFerreteria
                 txtDomicilio.Text = dtwProveedores.Rows[e.RowIndex].Cells[4].Value.ToString();
                 btnModificar.Enabled = true;
                 habilitarDeshabilitar(true);
+                btnGrabar.Enabled = false; 
             }
         }
 

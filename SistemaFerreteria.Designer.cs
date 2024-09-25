@@ -1,6 +1,6 @@
 ﻿namespace SistemaFerreteria
 {
-    partial class Form1
+    partial class SistemaFerreteria
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -11,14 +11,14 @@
         /// Limpiar los recursos que se estén usando.
         /// </summary>
         /// <param name="disposing">true si los recursos administrados se deben desechar; false en caso contrario.</param>
-        protected override void Dispose(bool disposing)
+        /*protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
                 components.Dispose();
             }
             base.Dispose(disposing);
-        }
+        }*/
 
         #region Código generado por el Diseñador de Windows Forms
 
@@ -35,9 +35,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnCatalagos = new FontAwesome.Sharp.IconMenuItem();
             this.btnClientes = new FontAwesome.Sharp.IconMenuItem();
-            this.btnProveedores = new FontAwesome.Sharp.IconMenuItem();
-            this.btnCategoria = new FontAwesome.Sharp.IconMenuItem();
             this.btnEmpleado = new FontAwesome.Sharp.IconMenuItem();
+            this.btnCategoria = new FontAwesome.Sharp.IconMenuItem();
+            this.btnProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -60,9 +60,10 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(480, 4);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(251, 40);
+            this.label1.Size = new System.Drawing.Size(243, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema Ferreteria ";
+            this.label1.Text = "Sistema Ferretería";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -125,9 +126,33 @@
             this.btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClientes.IconSize = 60;
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(180, 28);
+            this.btnClientes.Size = new System.Drawing.Size(174, 28);
             this.btnClientes.Text = "Clientes";
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
+            // 
+            // btnEmpleado
+            // 
+            this.btnEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnEmpleado.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
+            this.btnEmpleado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEmpleado.IconSize = 60;
+            this.btnEmpleado.Name = "btnEmpleado";
+            this.btnEmpleado.Size = new System.Drawing.Size(174, 28);
+            this.btnEmpleado.Text = "Empleado";
+            this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
+            // 
+            // btnCategoria
+            // 
+            this.btnCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnCategoria.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
+            this.btnCategoria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCategoria.IconSize = 60;
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(174, 28);
+            this.btnCategoria.Text = "Categoría";
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
             // btnProveedores
             // 
@@ -142,31 +167,7 @@
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
             // 
-            // btnCategoria
-            // 
-            this.btnCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.btnCategoria.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
-            this.btnCategoria.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCategoria.IconSize = 60;
-            this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(180, 28);
-            this.btnCategoria.Text = "Categoría";
-            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
-            // 
-            // btnEmpleado
-            // 
-            this.btnEmpleado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.btnEmpleado.IconChar = FontAwesome.Sharp.IconChar.ObjectGroup;
-            this.btnEmpleado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.btnEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEmpleado.IconSize = 60;
-            this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(180, 28);
-            this.btnEmpleado.Text = "Empleado";
-            this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
-            // 
-            // Form1
+            // SistemaFerreteria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -174,7 +175,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "SistemaFerreteria";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);

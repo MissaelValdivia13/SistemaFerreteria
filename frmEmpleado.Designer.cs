@@ -71,9 +71,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
             this.label2.Location = new System.Drawing.Point(542, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 38);
+            this.label2.Size = new System.Drawing.Size(150, 38);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Clientes";
+            this.label2.Text = "Empleados";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel4
@@ -83,6 +83,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(542, 51);
             this.panel4.TabIndex = 0;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // panel2
             // 
@@ -179,6 +180,7 @@
             // btnGrabar
             // 
             this.btnGrabar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(113)))), ((int)(((byte)(117)))));
+            this.btnGrabar.Enabled = false;
             this.btnGrabar.FlatAppearance.BorderSize = 0;
             this.btnGrabar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGrabar.Font = new System.Drawing.Font("Malgun Gothic Semilight", 14.75F);
@@ -289,6 +291,7 @@
             // btnModificar
             // 
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(113)))), ((int)(((byte)(117)))));
+            this.btnModificar.Enabled = false;
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnModificar.Font = new System.Drawing.Font("Malgun Gothic Semilight", 14.75F);
