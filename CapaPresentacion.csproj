@@ -53,6 +53,30 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCompras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCompras.Designer.cs">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProducto.Designer.cs">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalProductos.Designer.cs">
+      <DependentUpon>ModalProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalProveedores.Designer.cs">
+      <DependentUpon>ModalProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="SistemaFerreteria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +109,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmCompras.resx">
+      <DependentUpon>frmCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProducto.resx">
+      <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalProductos.resx">
+      <DependentUpon>ModalProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalProveedores.resx">
+      <DependentUpon>ModalProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SistemaFerreteria.resx">
       <DependentUpon>SistemaFerreteria.cs</DependentUpon>
     </EmbeddedResource>

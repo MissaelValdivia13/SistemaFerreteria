@@ -31,7 +31,7 @@ namespace SistemaFerreteria
         }
 
         //Permite 
-        private void AbrirFrom(Object form)
+        public void AbrirFrom(Object form)
         {
             if (this.pnPrincipal.Controls.Count > 0)
                 this.pnPrincipal.Controls.RemoveAt(0);
@@ -71,6 +71,18 @@ namespace SistemaFerreteria
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            frmProducto producto = new frmProducto();
+            AbrirFrom(producto);
+        }
+
+        private void btnRegistrarCompra_Click(object sender, EventArgs e)
+        {
+            frmCompras frmCompras = new frmCompras();
+            AbrirFrom(frmCompras);
         }
     }
 }

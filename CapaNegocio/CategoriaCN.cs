@@ -32,5 +32,10 @@ namespace CapaNegocio
         {
             objCategoria.actualizaCategoria(idCategoria, concepto);
         }
+
+        public DataSet consultaCategoriaPorConcepto(string concepto)
+        {
+            return objCategoria.consultarCategoriaPorConcepto(concepto);
+        }
     }
 }

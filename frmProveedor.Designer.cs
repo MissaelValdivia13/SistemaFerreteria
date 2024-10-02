@@ -63,6 +63,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1112, 71);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // label1
             // 
@@ -94,7 +95,7 @@
             this.btnLimpiar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnLimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnLimpiar.IconSize = 30;
-            this.btnLimpiar.Location = new System.Drawing.Point(37, 501);
+            this.btnLimpiar.Location = new System.Drawing.Point(37, 480);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(323, 38);
             this.btnLimpiar.TabIndex = 29;
@@ -115,7 +116,7 @@
             this.btnNuevoProveedor.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnNuevoProveedor.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnNuevoProveedor.IconSize = 30;
-            this.btnNuevoProveedor.Location = new System.Drawing.Point(37, 383);
+            this.btnNuevoProveedor.Location = new System.Drawing.Point(37, 362);
             this.btnNuevoProveedor.Name = "btnNuevoProveedor";
             this.btnNuevoProveedor.Size = new System.Drawing.Size(145, 38);
             this.btnNuevoProveedor.TabIndex = 28;
@@ -137,7 +138,7 @@
             this.btnGrabar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnGrabar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGrabar.IconSize = 30;
-            this.btnGrabar.Location = new System.Drawing.Point(215, 383);
+            this.btnGrabar.Location = new System.Drawing.Point(215, 362);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(145, 38);
             this.btnGrabar.TabIndex = 27;
@@ -307,7 +308,7 @@
             this.btnModificar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
             this.btnModificar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnModificar.IconSize = 30;
-            this.btnModificar.Location = new System.Drawing.Point(37, 446);
+            this.btnModificar.Location = new System.Drawing.Point(37, 425);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(323, 38);
             this.btnModificar.TabIndex = 31;

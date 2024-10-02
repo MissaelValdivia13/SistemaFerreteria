@@ -30,5 +30,10 @@ namespace CapaNegocio
         {
             objProveedor.actualizaProveedor(idProveedor,empresa,contacto,telefono,direccion);
         }
+
+        public DataSet consultaProveedor(string opcion, string valor)
+        {
+            return objProveedor.consultaProveedores(opcion, valor);
+        }
     }
 }

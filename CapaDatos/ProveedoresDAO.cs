@@ -95,5 +95,25 @@ namespace CapaDatos
                 conec.Close();
             }
         }
+
+        public DataSet consultaProveedores(string opcion, string valor)
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta())
+                {
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter("CONSULTAPROV", conec))
+                    {
+                        adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adaptador.SelectCommand.Parameters.AddWithValue("@Opcion", opcion);
+                        adaptador.SelectCommand.Parameters.AddWithValue("@Valor", valor);
+                        adaptador.Fill(data, "Proveedores");
+                        conec.Close();
+                    }
+                }
+                return data;
+            }
+        }
+
     }
 }

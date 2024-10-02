@@ -34,10 +34,13 @@
             this.pnPrincipal = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnCatalagos = new FontAwesome.Sharp.IconMenuItem();
+            this.btnProductos = new FontAwesome.Sharp.IconMenuItem();
             this.btnClientes = new FontAwesome.Sharp.IconMenuItem();
             this.btnEmpleado = new FontAwesome.Sharp.IconMenuItem();
             this.btnCategoria = new FontAwesome.Sharp.IconMenuItem();
             this.btnProveedores = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            this.btnRegistrarCompra = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -89,7 +92,8 @@
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnCatalagos});
+            this.btnCatalagos,
+            this.iconMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1159, 81);
@@ -101,6 +105,7 @@
             this.btnCatalagos.AutoSize = false;
             this.btnCatalagos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
             this.btnCatalagos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnProductos,
             this.btnClientes,
             this.btnEmpleado,
             this.btnCategoria,
@@ -118,6 +123,18 @@
             this.btnCatalagos.Text = "Catálogos";
             this.btnCatalagos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
+            // btnProductos
+            // 
+            this.btnProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnProductos.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnProductos.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnProductos.IconSize = 60;
+            this.btnProductos.Name = "btnProductos";
+            this.btnProductos.Size = new System.Drawing.Size(180, 28);
+            this.btnProductos.Text = "Producto";
+            this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
+            // 
             // btnClientes
             // 
             this.btnClientes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
@@ -126,7 +143,7 @@
             this.btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClientes.IconSize = 60;
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(174, 28);
+            this.btnClientes.Size = new System.Drawing.Size(180, 28);
             this.btnClientes.Text = "Clientes";
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
@@ -138,7 +155,7 @@
             this.btnEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEmpleado.IconSize = 60;
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(174, 28);
+            this.btnEmpleado.Size = new System.Drawing.Size(180, 28);
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
             // 
@@ -150,7 +167,7 @@
             this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCategoria.IconSize = 60;
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(174, 28);
+            this.btnCategoria.Size = new System.Drawing.Size(180, 28);
             this.btnCategoria.Text = "Categoría";
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
@@ -166,6 +183,37 @@
             this.btnProveedores.Size = new System.Drawing.Size(180, 28);
             this.btnProveedores.Text = "Proveedores";
             this.btnProveedores.Click += new System.EventHandler(this.btnProveedores_Click);
+            // 
+            // iconMenuItem1
+            // 
+            this.iconMenuItem1.AutoSize = false;
+            this.iconMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
+            this.iconMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnRegistrarCompra});
+            this.iconMenuItem1.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.5F);
+            this.iconMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
+            this.iconMenuItem1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem1.IconSize = 55;
+            this.iconMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItem1.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
+            this.iconMenuItem1.Name = "iconMenuItem1";
+            this.iconMenuItem1.Size = new System.Drawing.Size(122, 70);
+            this.iconMenuItem1.Text = "Compras";
+            this.iconMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // btnRegistrarCompra
+            // 
+            this.btnRegistrarCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnRegistrarCompra.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnRegistrarCompra.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRegistrarCompra.IconSize = 60;
+            this.btnRegistrarCompra.Name = "btnRegistrarCompra";
+            this.btnRegistrarCompra.Size = new System.Drawing.Size(180, 28);
+            this.btnRegistrarCompra.Text = "Registrar";
+            this.btnRegistrarCompra.Click += new System.EventHandler(this.btnRegistrarCompra_Click);
             // 
             // SistemaFerreteria
             // 
@@ -199,6 +247,9 @@
         private FontAwesome.Sharp.IconMenuItem btnProveedores;
         private FontAwesome.Sharp.IconMenuItem btnCategoria;
         private FontAwesome.Sharp.IconMenuItem btnEmpleado;
+        private FontAwesome.Sharp.IconMenuItem btnProductos;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private FontAwesome.Sharp.IconMenuItem btnRegistrarCompra;
     }
 }
 

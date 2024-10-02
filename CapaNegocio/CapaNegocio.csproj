@@ -51,7 +51,9 @@
   <ItemGroup>
     <Compile Include="CategoriaCN.cs" />
     <Compile Include="ClienteCN.cs" />
+    <Compile Include="ComprasCN.cs" />
     <Compile Include="EmpleadoNC.cs" />
+    <Compile Include="ProductoCN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresCN.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

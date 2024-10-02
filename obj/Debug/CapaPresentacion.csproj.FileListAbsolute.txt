@@ -23,3 +23,7 @@ C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\Sis
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmCategoria.resources
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmEmpleado.resources
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.SistemaFerreteria.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmProducto.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmCompras.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.ModalProveedores.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.ModalProductos.resources

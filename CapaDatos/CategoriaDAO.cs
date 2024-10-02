@@ -87,5 +87,22 @@ namespace CapaDatos
                 conec.Close();
             }
         }
+
+        public DataSet consultarCategoriaPorConcepto(string concepto)
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta())
+                {
+                    SqlDataAdapter adaptador = new SqlDataAdapter("CONSULTACATEGORIAID", conec);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.AddWithValue("@Concepto", concepto);
+                    adaptador.Fill(data, "SUBE");
+                    conec.Close();
+                }
+                return data;
+            }
+        }
+
     }
 }

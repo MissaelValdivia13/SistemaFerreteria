@@ -100,5 +100,10 @@ namespace SistemaFerreteria
             }
             dtwProveedores.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
