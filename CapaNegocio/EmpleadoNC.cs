@@ -19,9 +19,9 @@ namespace CapaNegocio
             return empleado.consultaEmpleados();
         }
 
-        public void subeEmpleado(string nombre, string puesto, string telefono)
+        public void subeEmpleado(string nombre, string puesto, string telefono, string contra)
         {
-            empleado.subeEmpleado(nombre,puesto,telefono);
+            empleado.subeEmpleado(nombre,puesto,telefono, contra);
         }
 
         public int nuevoEmpleado()
@@ -29,9 +29,14 @@ namespace CapaNegocio
             return empleado.nuevoEmpleado();
         }
 
-        public void actualizaEmpleado(int idEmpleado, string nombre, string puesto, string telefono)
+        public void actualizaEmpleado(int idEmpleado, string nombre, string puesto, string telefono, string contra)
         {
-            empleado.actualizaEmpleado(idEmpleado, nombre, puesto, telefono);
+            empleado.actualizaEmpleado(idEmpleado, nombre, puesto, telefono, contra);
+        }
+
+        public int ValidarEmpleado(string nombre, string contra)
+        {
+            return empleado.ValidarEmpleado(nombre, contra);
         }
 
     }

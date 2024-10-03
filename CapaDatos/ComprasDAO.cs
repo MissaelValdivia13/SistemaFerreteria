@@ -31,15 +31,15 @@ namespace CapaDatos
                     com.Parameters.AddWithValue("@Iva", iva);
                     com.Parameters.AddWithValue("@Subtotal", subtotal);
 
-                    // Agregar el parámetro de tipo tabla
                     SqlParameter parameter = com.Parameters.AddWithValue("@DP", detalleData);
-                    parameter.SqlDbType = SqlDbType.Structured; 
-                    parameter.TypeName = "DETAL"; 
-
+                    parameter.SqlDbType = SqlDbType.Structured;
+                    parameter.TypeName = "DETAL";
                     com.ExecuteNonQuery();
                 }
             }
         }
+
+
 
         public int nuevaCompra()
         {
@@ -61,6 +61,52 @@ namespace CapaDatos
             }
             return totalRegistros;
         }
+
+        public DataSet consultaCompras(string opcion, string valor)
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta()) 
+                {
+                    using (SqlCommand comando = new SqlCommand("CONSULTACOMPRAS", conec))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Opcion", opcion);
+                        comando.Parameters.AddWithValue("@Valor", valor);
+
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            adaptador.Fill(data, "Compras"); 
+                        }
+                    }
+                    conec.Close(); 
+                }
+                return data; 
+            }
+        }
+
+        public DataSet consultaDetalleCompra(int idCompra)
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta()) 
+                {
+                    using (SqlCommand comando = new SqlCommand("CONSULTADETALLECOMPRA", conec))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Id", idCompra); 
+
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            adaptador.Fill(data, "DetalleCompra"); 
+                        }
+                    }
+                    conec.Close(); 
+                }
+                return data; 
+            }
+        }
+
 
     }
 }

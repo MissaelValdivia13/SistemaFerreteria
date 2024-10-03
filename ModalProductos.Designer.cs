@@ -39,7 +39,6 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnIdProducto = new System.Windows.Forms.Button();
             this.gbBusqueda = new System.Windows.Forms.GroupBox();
-            this.btnSearch = new FontAwesome.Sharp.IconButton();
             this.txtIdProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -135,7 +134,6 @@
             // 
             // gbBusqueda
             // 
-            this.gbBusqueda.Controls.Add(this.btnSearch);
             this.gbBusqueda.Controls.Add(this.txtIdProducto);
             this.gbBusqueda.Controls.Add(this.label2);
             this.gbBusqueda.Enabled = false;
@@ -145,25 +143,12 @@
             this.gbBusqueda.TabIndex = 4;
             this.gbBusqueda.TabStop = false;
             // 
-            // btnSearch
-            // 
-            this.btnSearch.IconChar = FontAwesome.Sharp.IconChar.Searchengin;
-            this.btnSearch.IconColor = System.Drawing.Color.Black;
-            this.btnSearch.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnSearch.IconSize = 24;
-            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSearch.Location = new System.Drawing.Point(281, 16);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(32, 25);
-            this.btnSearch.TabIndex = 41;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // txtIdProducto
             // 
             this.txtIdProducto.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtIdProducto.Location = new System.Drawing.Point(72, 16);
             this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(203, 26);
+            this.txtIdProducto.Size = new System.Drawing.Size(241, 26);
             this.txtIdProducto.TabIndex = 40;
             this.txtIdProducto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtIdProducto_KeyUp);
             // 
@@ -335,7 +320,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnIdProducto;
         private System.Windows.Forms.GroupBox gbBusqueda;
-        private FontAwesome.Sharp.IconButton btnSearch;
         private System.Windows.Forms.TextBox txtIdProducto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

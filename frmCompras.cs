@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Xml.Serialization;
@@ -162,36 +163,47 @@ namespace SistemaFerreteria
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            DataTable dataTable = new DataTable();
-
-            dataTable.Columns.Add("IdProducto", typeof(int)); 
-            dataTable.Columns.Add("Cantidad", typeof(int));   
-            dataTable.Columns.Add("Costo", typeof(decimal));  
-
-            // Añadir las filas al DataTable basadas en las filas del DataGridView
-            foreach (DataGridViewRow row in dtwProducto.Rows)
+            try
             {
-                if (!row.IsNewRow) // Ignorar la fila nueva en blanco
+                DataTable dataTable = new DataTable();
+
+                dataTable.Columns.Add("IdProducto", typeof(int));
+                dataTable.Columns.Add("Cantidad", typeof(int));
+                dataTable.Columns.Add("Costo", typeof(decimal));
+
+                foreach (DataGridViewRow row in dtwProducto.Rows)
                 {
-                    DataRow dataRow = dataTable.NewRow();
+                    if (!row.IsNewRow)
+                    {
+                        DataRow dataRow = dataTable.NewRow();
 
-                    // Asignar solo las columnas seleccionadas
-                    dataRow["IdProducto"] = row.Cells[0].Value ?? DBNull.Value; 
-                    dataRow["Cantidad"] = row.Cells[2].Value ?? DBNull.Value;   
-                    dataRow["Costo"] = row.Cells[3].Value ?? DBNull.Value;      
+                        dataRow["IdProducto"] = row.Cells[0].Value ?? DBNull.Value;
+                        dataRow["Cantidad"] = row.Cells[2].Value ?? DBNull.Value;
+                        dataRow["Costo"] = row.Cells[3].Value ?? DBNull.Value;
 
-                    dataTable.Rows.Add(dataRow);
+                        dataTable.Rows.Add(dataRow);
+                    }
                 }
-            }
 
-            string fecha = $"{dtpfecha.Value.Year}-{dtpfecha.Value.Month:D2}-{dtpfecha.Value.Day:D2}"; 
-            int idCompra = Convert.ToInt32(txtIdCompra.Text); 
-            compra.EnviarCompraYDetalle(Convert.ToInt32(txtIdProveedor.Text), txtFactura.Text, fecha, Convert.ToDouble(txtIva.Text), Convert.ToDouble(txtSubtotal.Text), dataTable);
-            limpiar();
-            limpiarCamposAñadir();
-            habilitarGb(false);
-            MessageBox.Show("Se guardo correctamente la compra");
+                string fecha = $"{dtpfecha.Value.Year}-{dtpfecha.Value.Month:D2}-{dtpfecha.Value.Day:D2}";
+                int idCompra = Convert.ToInt32(txtIdCompra.Text);
+                compra.EnviarCompraYDetalle(Convert.ToInt32(txtIdProveedor.Text), txtFactura.Text, fecha, Convert.ToDouble(txtIva.Text), Convert.ToDouble(txtSubtotal.Text), dataTable);
+
+                limpiar();
+                limpiarCamposAñadir();
+                habilitarGb(false);
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show($"Error de SQL: {ex.Message}\nCódigo de error: {ex.Number}\nStackTrace: {ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
 
 
         private void calcularTotales()
@@ -217,6 +229,22 @@ namespace SistemaFerreteria
             gbProveedor.Enabled = opcion;
         }
 
+        private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!EsCarácterVálido(e.KeyChar, sender as TextBox))
+            {
+                e.Handled = true; 
+            }
+        }
+
+        private void txtCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!EsCarácterVálido(e.KeyChar, sender as TextBox))
+            {
+                e.Handled = true; 
+            }
+        }
+
         private void limpiar()
         {
             txtIdCompra.Text = "";
@@ -230,5 +258,19 @@ namespace SistemaFerreteria
             txtContacto.Text = "";
             dtwProducto.Rows.Clear();
         }
+
+        private bool EsCarácterVálido(char caracter, TextBox textBox)
+        {
+            if (char.IsControl(caracter) || char.IsDigit(caracter) || caracter == '.')
+            {
+                if (caracter == '.' && textBox.Text.IndexOf('.') > -1)
+                {
+                    return false; 
+                }
+                return true; 
+            }
+            return false; 
+        }
+
     }
 }

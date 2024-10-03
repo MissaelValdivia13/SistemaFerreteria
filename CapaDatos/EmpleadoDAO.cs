@@ -28,7 +28,7 @@ namespace CapaDatos
             }
         }
 
-        public void subeEmpleado(string nombre, string puesto, string telefono)
+        public void subeEmpleado(string nombre, string puesto, string telefono, string contra)
         {
             try
             {
@@ -37,7 +37,8 @@ namespace CapaDatos
                 adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
                 adaptador.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
                 adaptador.SelectCommand.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = puesto;
-                adaptador.SelectCommand.Parameters.Add("Telefono", SqlDbType.VarChar).Value = telefono;
+                adaptador.SelectCommand.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = telefono;
+                adaptador.SelectCommand.Parameters.Add("@Contra", SqlDbType.VarChar).Value = contra;
                 adaptador.SelectCommand.ExecuteNonQuery();
 
             }catch(Exception e)
@@ -70,7 +71,7 @@ namespace CapaDatos
             return totalRegistros;
         }
 
-        public void actualizaEmpleado(int idEmpleado, string nombre, string puesto, string telefono)
+        public void actualizaEmpleado(int idEmpleado, string nombre, string puesto, string telefono, string contra)
         {
             try
             {
@@ -81,6 +82,7 @@ namespace CapaDatos
                 adaptador.SelectCommand.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
                 adaptador.SelectCommand.Parameters.Add("@Puesto", SqlDbType.VarChar).Value = puesto;
                 adaptador.SelectCommand.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = telefono;
+                adaptador.SelectCommand.Parameters.Add("@Contra", SqlDbType.VarChar).Value = contra;
                 adaptador.SelectCommand.ExecuteNonQuery();
             }
             catch (Exception e)
@@ -92,5 +94,25 @@ namespace CapaDatos
                 conec.Close();
             }
         }
+        public int ValidarEmpleado(string nombre, string contra)
+        {
+            conec = objConecta.Conecta();
+            int idEmpleado = -1; 
+                comando = new SqlCommand("VALIDAREMPLEADO", conec);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                comando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
+                comando.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = contra;
+
+            var result = comando.ExecuteScalar();
+
+            if (result != null)
+                {
+                    idEmpleado = Convert.ToInt32(result);
+                }
+            conec.Close();
+            return idEmpleado; 
+        }
+
     }
 }

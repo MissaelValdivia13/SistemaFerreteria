@@ -115,7 +115,7 @@ namespace CapaDatos
                             adaptador.Fill(data, "Productos");
                         }
                     }
-                    conec.Close(); // Cerrar conexión (opcional, ya que se cierra al usar using)
+                    conec.Close(); 
                 }
                 return data;
             }

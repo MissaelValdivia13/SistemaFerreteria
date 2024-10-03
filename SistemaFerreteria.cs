@@ -13,9 +13,13 @@ namespace SistemaFerreteria
 {
     public partial class SistemaFerreteria : Form
     {
-        public SistemaFerreteria()
+        private int id;
+        private string nombre;
+        public SistemaFerreteria(int id, string nombre)
         {
             InitializeComponent();
+            lbEmpleado.Text = lbEmpleado.Text + id;
+            lbNombre.Text = lbNombre.Text + nombre;
         }
 
         private void catalagosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -82,6 +86,12 @@ namespace SistemaFerreteria
         private void btnRegistrarCompra_Click(object sender, EventArgs e)
         {
             frmCompras frmCompras = new frmCompras();
+            AbrirFrom(frmCompras);
+        }
+
+        private void btnConsultarCompra_Click(object sender, EventArgs e)
+        {
+            frmConsultaCompras frmCompras = new frmConsultaCompras();
             AbrirFrom(frmCompras);
         }
     }

@@ -9,7 +9,7 @@ namespace SistemaFerreteria
     public partial class ModalProveedores : Form
     {
         private ProveedoresCN proveedores = new ProveedoresCN();
-        string opcion = "", id = "", nombre = "", empresa = "";
+        string opcion = "id", id = "", nombre = "", empresa = "";
 
         public event Action<string, string, string> ProveedorSeleccionado;
 
@@ -89,7 +89,7 @@ namespace SistemaFerreteria
 
         private void ModalProveedores_Load(object sender, EventArgs e)
         {
-
+            llenarDtw(txtIdProducto.Text);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)

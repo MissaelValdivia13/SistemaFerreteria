@@ -46,12 +46,14 @@ namespace SistemaFerreteria
             txtTelefono.Text = "";
             cboPuesto.Text = "";
             txtIdEmpleado.Text = "";
+            txtContra.Text = "";
         }
         private void habilitarDesabilitar(Boolean opcion)
         {
             txtTelefono.Enabled = opcion;
             txtNombre.Enabled = opcion;
             cboPuesto.Enabled = opcion;
+            txtContra.Enabled = opcion;
         }
 
         private void btnNuevoEmpleado_Click(object sender, EventArgs e)
@@ -66,7 +68,9 @@ namespace SistemaFerreteria
         {
             if (cboPuesto.Text != "" || cboPuesto.Text != null)
             {
-                empleado.subeEmpleado(txtNombre.Text, cboPuesto.Text, txtTelefono.Text);
+                Encriptacion encripta = new Encriptacion();
+                string encriptada = encripta.Encriptar(txtContra.Text);
+                empleado.subeEmpleado(txtNombre.Text, cboPuesto.Text, txtTelefono.Text, encriptada);
                 limpiarCampos();
                 habilitarDesabilitar(false);
                 llenarData();
@@ -95,7 +99,7 @@ namespace SistemaFerreteria
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            empleado.actualizaEmpleado(Convert.ToInt32(txtIdEmpleado.Text), txtNombre.Text, cboPuesto.Text, txtTelefono.Text);
+           // empleado.actualizaEmpleado(Convert.ToInt32(txtIdEmpleado.Text), txtNombre.Text, cboPuesto.Text, txtTelefono.Text);
             habilitarDesabilitar(false);
             limpiarCampos();
             llenarData();
@@ -106,5 +110,7 @@ namespace SistemaFerreteria
         {
 
         }
+
+
     }
 }

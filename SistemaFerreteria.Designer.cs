@@ -41,6 +41,9 @@
             this.btnProveedores = new FontAwesome.Sharp.IconMenuItem();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.btnRegistrarCompra = new FontAwesome.Sharp.IconMenuItem();
+            this.btnConsultarCompra = new FontAwesome.Sharp.IconMenuItem();
+            this.lbEmpleado = new System.Windows.Forms.Label();
+            this.lbNombre = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -49,6 +52,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.lbNombre);
+            this.panel1.Controls.Add(this.lbEmpleado);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -61,7 +66,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Malgun Gothic Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(480, 4);
+            this.label1.Location = new System.Drawing.Point(269, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(243, 40);
             this.label1.TabIndex = 0;
@@ -131,7 +136,7 @@
             this.btnProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProductos.IconSize = 60;
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(180, 28);
+            this.btnProductos.Size = new System.Drawing.Size(174, 28);
             this.btnProductos.Text = "Producto";
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
@@ -143,7 +148,7 @@
             this.btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClientes.IconSize = 60;
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(180, 28);
+            this.btnClientes.Size = new System.Drawing.Size(174, 28);
             this.btnClientes.Text = "Clientes";
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
@@ -155,7 +160,7 @@
             this.btnEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEmpleado.IconSize = 60;
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(180, 28);
+            this.btnEmpleado.Size = new System.Drawing.Size(174, 28);
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
             // 
@@ -167,7 +172,7 @@
             this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCategoria.IconSize = 60;
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(180, 28);
+            this.btnCategoria.Size = new System.Drawing.Size(174, 28);
             this.btnCategoria.Text = "Categoría";
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
@@ -189,7 +194,8 @@
             this.iconMenuItem1.AutoSize = false;
             this.iconMenuItem1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
             this.iconMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnRegistrarCompra});
+            this.btnRegistrarCompra,
+            this.btnConsultarCompra});
             this.iconMenuItem1.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.5F);
             this.iconMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
             this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
@@ -211,9 +217,43 @@
             this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarCompra.IconSize = 60;
             this.btnRegistrarCompra.Name = "btnRegistrarCompra";
-            this.btnRegistrarCompra.Size = new System.Drawing.Size(180, 28);
+            this.btnRegistrarCompra.Size = new System.Drawing.Size(152, 28);
             this.btnRegistrarCompra.Text = "Registrar";
             this.btnRegistrarCompra.Click += new System.EventHandler(this.btnRegistrarCompra_Click);
+            // 
+            // btnConsultarCompra
+            // 
+            this.btnConsultarCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnConsultarCompra.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnConsultarCompra.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnConsultarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConsultarCompra.IconSize = 60;
+            this.btnConsultarCompra.Name = "btnConsultarCompra";
+            this.btnConsultarCompra.Size = new System.Drawing.Size(152, 28);
+            this.btnConsultarCompra.Text = "Consultar";
+            this.btnConsultarCompra.Click += new System.EventHandler(this.btnConsultarCompra_Click);
+            // 
+            // lbEmpleado
+            // 
+            this.lbEmpleado.AutoSize = true;
+            this.lbEmpleado.Font = new System.Drawing.Font("Malgun Gothic Semilight", 14.75F);
+            this.lbEmpleado.ForeColor = System.Drawing.Color.White;
+            this.lbEmpleado.Location = new System.Drawing.Point(600, 9);
+            this.lbEmpleado.Name = "lbEmpleado";
+            this.lbEmpleado.Size = new System.Drawing.Size(40, 28);
+            this.lbEmpleado.TabIndex = 1;
+            this.lbEmpleado.Text = "Id: ";
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Malgun Gothic Semilight", 14.75F);
+            this.lbNombre.ForeColor = System.Drawing.Color.White;
+            this.lbNombre.Location = new System.Drawing.Point(704, 8);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(56, 28);
+            this.lbNombre.TabIndex = 2;
+            this.lbNombre.Text = "User:";
             // 
             // SistemaFerreteria
             // 
@@ -250,6 +290,9 @@
         private FontAwesome.Sharp.IconMenuItem btnProductos;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private FontAwesome.Sharp.IconMenuItem btnRegistrarCompra;
+        private FontAwesome.Sharp.IconMenuItem btnConsultarCompra;
+        private System.Windows.Forms.Label lbEmpleado;
+        private System.Windows.Forms.Label lbNombre;
     }
 }
 

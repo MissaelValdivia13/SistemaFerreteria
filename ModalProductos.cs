@@ -14,10 +14,9 @@ namespace SistemaFerreteria
     public partial class ModalProductos : Form
     {
         private ProductoCN productoCN = new ProductoCN();
-        private string opcion = "";
+        private string opcion = "id";
         string id = "", nombre = "";
 
-        // Definir un evento que enviará los datos al formulario padre
         public event Action<string, string> ProductoSeleccionado;
         public ModalProductos()
         {
@@ -26,12 +25,11 @@ namespace SistemaFerreteria
 
         private void ModalProductos_Load(object sender, EventArgs e)
         {
-
+            llenarDtw(txtIdProducto.Text);
         }
 
         private void RestablecerBotones()
         {
-            // Restablecer el estilo de los botones
             btnIdProducto.BackColor = Color.White;
             btnIdProducto.ForeColor = Color.Black;
 
@@ -106,7 +104,6 @@ namespace SistemaFerreteria
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            dtwProducto.DataSource = null;
             txtIdProducto.Clear();
             RestablecerBotones();
             gbBusqueda.Enabled = false;
