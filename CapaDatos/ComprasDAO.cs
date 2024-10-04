@@ -17,10 +17,9 @@ namespace CapaDatos
         private SqlDataAdapter adaptador;
         private SqlCommand comando;
 
-        public void EnviarCompraYDetalle(int idProveedor, string facturas, string fecha, double iva, double subtotal, DataTable detalleData)
+        public void EnviarCompraYDetalle(int idProveedor, string facturas, string fecha, double iva, double subtotal, DataTable detalleData, int idEmpleado, string opcion)
         {
-            using (SqlConnection conec = objConecta.Conecta())
-            {
+            conec = objConecta.Conecta();
                 using (SqlCommand com = new SqlCommand("GuardarCompraYDetalle", conec))
                 {
                     com.CommandType = CommandType.StoredProcedure;
@@ -34,10 +33,18 @@ namespace CapaDatos
                     SqlParameter parameter = com.Parameters.AddWithValue("@DP", detalleData);
                     parameter.SqlDbType = SqlDbType.Structured;
                     parameter.TypeName = "DETAL";
+
+                    // Parametros del error por si llega a surgir
+                    com.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
+                    com.Parameters.AddWithValue("@Opcion", opcion);
+
+                   
                     com.ExecuteNonQuery();
-                }
+                    conec.Close();
+                
             }
         }
+
 
 
 

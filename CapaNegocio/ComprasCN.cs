@@ -13,9 +13,9 @@ namespace CapaNegocio
     public class ComprasCN
     {
         ComprasDAO compra = new ComprasDAO();
-        public void EnviarCompraYDetalle(int idProveedor, string facturas, string fecha, double iva, double subtotal, DataTable detalleData)
+        public void EnviarCompraYDetalle(int idProveedor, string facturas, string fecha, double iva, double subtotal, DataTable detalleData, int idEmpleado, string opcion)
         {
-             compra.EnviarCompraYDetalle(idProveedor, facturas, fecha, iva, subtotal, detalleData);
+            compra.EnviarCompraYDetalle(idProveedor, facturas, fecha, iva, subtotal, detalleData, idEmpleado, opcion);
         }
 
         public int nuevaCompra()

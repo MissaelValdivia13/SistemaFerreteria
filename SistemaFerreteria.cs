@@ -85,7 +85,11 @@ namespace SistemaFerreteria
 
         private void btnRegistrarCompra_Click(object sender, EventArgs e)
         {
-            frmCompras frmCompras = new frmCompras();
+            ;
+            string[] partes = lbEmpleado.Text.Split(':');
+            string id = partes[1].Trim();
+            int idEmpleado = Convert.ToInt32(id);
+            frmCompras frmCompras = new frmCompras(idEmpleado, "Registrar Compra");
             AbrirFrom(frmCompras);
         }
 
@@ -93,6 +97,12 @@ namespace SistemaFerreteria
         {
             frmConsultaCompras frmCompras = new frmConsultaCompras();
             AbrirFrom(frmCompras);
+        }
+
+        private void btnRegistrarVenta_Click(object sender, EventArgs e)
+        {
+            Ventas ventas = new Ventas();
+            AbrirFrom(ventas);
         }
     }
 }

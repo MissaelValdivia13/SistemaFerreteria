@@ -12,9 +12,13 @@ namespace SistemaFerreteria
     {
         ComprasCN compra = new ComprasCN();
         double sub = 0, total = 0, iva = 0;
-        public frmCompras()
+        private int empleado;
+        private string opcion;
+        public frmCompras(int id, string opcion)
         {
             InitializeComponent();
+            this.empleado = id;
+            this.opcion = opcion;
         }
 
         public frmCompras(string id, string contacto, string empresa)
@@ -187,7 +191,7 @@ namespace SistemaFerreteria
 
                 string fecha = $"{dtpfecha.Value.Year}-{dtpfecha.Value.Month:D2}-{dtpfecha.Value.Day:D2}";
                 int idCompra = Convert.ToInt32(txtIdCompra.Text);
-                compra.EnviarCompraYDetalle(Convert.ToInt32(txtIdProveedor.Text), txtFactura.Text, fecha, Convert.ToDouble(txtIva.Text), Convert.ToDouble(txtSubtotal.Text), dataTable);
+                compra.EnviarCompraYDetalle(Convert.ToInt32(txtIdProveedor.Text), txtFactura.Text, fecha, Convert.ToDouble(txtIva.Text), Convert.ToDouble(txtSubtotal.Text), dataTable, empleado, opcion);
 
                 limpiar();
                 limpiarCamposAñadir();
@@ -195,7 +199,7 @@ namespace SistemaFerreteria
             }
             catch (SqlException ex)
             {
-                MessageBox.Show($"Error de SQL: {ex.Message}\nCódigo de error: {ex.Number}\nStackTrace: {ex.StackTrace}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No se pudo guardar correctamente ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch (Exception ex)
             {
