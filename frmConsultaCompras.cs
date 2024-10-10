@@ -124,5 +124,10 @@ namespace SistemaFerreteria
             }
             dtwCompra.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+
+        private void txtIdProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

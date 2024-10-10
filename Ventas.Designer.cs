@@ -34,19 +34,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.gbCompra = new System.Windows.Forms.GroupBox();
-            this.dtpfecha = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtIdCompra = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.gbProveedor = new System.Windows.Forms.GroupBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.gbCliente = new System.Windows.Forms.GroupBox();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSeleccionar = new FontAwesome.Sharp.IconButton();
             this.label4 = new System.Windows.Forms.Label();
             this.txtContacto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtIdProveedor = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.btnLimpiar = new FontAwesome.Sharp.IconButton();
@@ -62,7 +60,7 @@
             this.gbProducto = new System.Windows.Forms.GroupBox();
             this.btnSeleccionarProducto = new FontAwesome.Sharp.IconButton();
             this.btnAñadir = new FontAwesome.Sharp.IconButton();
-            this.txtCosto = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -78,7 +76,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.gbCompra.SuspendLayout();
-            this.gbProveedor.SuspendLayout();
+            this.gbCliente.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtwProducto)).BeginInit();
             this.gbProducto.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -90,7 +88,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
             this.panel1.Controls.Add(this.txtTotal);
             this.panel1.Controls.Add(this.gbCompra);
-            this.panel1.Controls.Add(this.gbProveedor);
+            this.panel1.Controls.Add(this.gbCliente);
             this.panel1.Controls.Add(this.label14);
             this.panel1.Controls.Add(this.btnLimpiar);
             this.panel1.Controls.Add(this.btnNuevoProveedor);
@@ -118,38 +116,17 @@
             // 
             // gbCompra
             // 
-            this.gbCompra.Controls.Add(this.dtpfecha);
-            this.gbCompra.Controls.Add(this.label6);
             this.gbCompra.Controls.Add(this.txtIdCompra);
             this.gbCompra.Controls.Add(this.label8);
             this.gbCompra.Enabled = false;
             this.gbCompra.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.75F);
             this.gbCompra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.gbCompra.Location = new System.Drawing.Point(786, 41);
+            this.gbCompra.Location = new System.Drawing.Point(812, 45);
             this.gbCompra.Name = "gbCompra";
-            this.gbCompra.Size = new System.Drawing.Size(355, 117);
+            this.gbCompra.Size = new System.Drawing.Size(239, 70);
             this.gbCompra.TabIndex = 45;
             this.gbCompra.TabStop = false;
             this.gbCompra.Text = "Información de la Compra";
-            // 
-            // dtpfecha
-            // 
-            this.dtpfecha.Location = new System.Drawing.Point(100, 78);
-            this.dtpfecha.Name = "dtpfecha";
-            this.dtpfecha.Size = new System.Drawing.Size(244, 27);
-            this.dtpfecha.TabIndex = 43;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.75F);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.label6.Location = new System.Drawing.Point(40, 80);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 23);
-            this.label6.TabIndex = 42;
-            this.label6.Text = "Fecha";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtIdCompra
             // 
@@ -172,43 +149,44 @@
             this.label8.Text = "IdVenta";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gbProveedor
+            // gbCliente
             // 
-            this.gbProveedor.Controls.Add(this.maskedTextBox1);
-            this.gbProveedor.Controls.Add(this.textBox1);
-            this.gbProveedor.Controls.Add(this.label5);
-            this.gbProveedor.Controls.Add(this.btnSeleccionar);
-            this.gbProveedor.Controls.Add(this.label4);
-            this.gbProveedor.Controls.Add(this.txtContacto);
-            this.gbProveedor.Controls.Add(this.label2);
-            this.gbProveedor.Controls.Add(this.txtIdProveedor);
-            this.gbProveedor.Controls.Add(this.label3);
-            this.gbProveedor.Enabled = false;
-            this.gbProveedor.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.75F);
-            this.gbProveedor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.gbProveedor.Location = new System.Drawing.Point(28, 41);
-            this.gbProveedor.Name = "gbProveedor";
-            this.gbProveedor.Size = new System.Drawing.Size(604, 117);
-            this.gbProveedor.TabIndex = 2;
-            this.gbProveedor.TabStop = false;
-            this.gbProveedor.Text = "Información del Cliente";
+            this.gbCliente.Controls.Add(this.txtTelefono);
+            this.gbCliente.Controls.Add(this.txtDomicilio);
+            this.gbCliente.Controls.Add(this.label5);
+            this.gbCliente.Controls.Add(this.btnSeleccionar);
+            this.gbCliente.Controls.Add(this.label4);
+            this.gbCliente.Controls.Add(this.txtContacto);
+            this.gbCliente.Controls.Add(this.label2);
+            this.gbCliente.Controls.Add(this.txtIdCliente);
+            this.gbCliente.Controls.Add(this.label3);
+            this.gbCliente.Enabled = false;
+            this.gbCliente.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.75F);
+            this.gbCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.gbCliente.Location = new System.Drawing.Point(28, 41);
+            this.gbCliente.Name = "gbCliente";
+            this.gbCliente.Size = new System.Drawing.Size(604, 117);
+            this.gbCliente.TabIndex = 2;
+            this.gbCliente.TabStop = false;
+            this.gbCliente.Text = "Información del Cliente";
             // 
-            // maskedTextBox1
+            // txtTelefono
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(93, 77);
-            this.maskedTextBox1.Mask = "000-000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(113, 27);
-            this.maskedTextBox1.TabIndex = 50;
+            this.txtTelefono.Enabled = false;
+            this.txtTelefono.Location = new System.Drawing.Point(93, 77);
+            this.txtTelefono.Mask = "000-000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(113, 27);
+            this.txtTelefono.TabIndex = 50;
             // 
-            // textBox1
+            // txtDomicilio
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(308, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 26);
-            this.textBox1.TabIndex = 49;
+            this.txtDomicilio.Enabled = false;
+            this.txtDomicilio.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtDomicilio.Location = new System.Drawing.Point(308, 81);
+            this.txtDomicilio.Name = "txtDomicilio";
+            this.txtDomicilio.Size = new System.Drawing.Size(117, 26);
+            this.txtDomicilio.TabIndex = 49;
             // 
             // label5
             // 
@@ -241,6 +219,7 @@
             this.btnSeleccionar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSeleccionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // label4
             // 
@@ -275,14 +254,14 @@
             this.label2.Text = "Nombre";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtIdProveedor
+            // txtIdCliente
             // 
-            this.txtIdProveedor.Enabled = false;
-            this.txtIdProveedor.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtIdProveedor.Location = new System.Drawing.Point(93, 32);
-            this.txtIdProveedor.Name = "txtIdProveedor";
-            this.txtIdProveedor.Size = new System.Drawing.Size(79, 26);
-            this.txtIdProveedor.TabIndex = 39;
+            this.txtIdCliente.Enabled = false;
+            this.txtIdCliente.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtIdCliente.Location = new System.Drawing.Point(93, 32);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(79, 26);
+            this.txtIdCliente.TabIndex = 39;
             // 
             // label3
             // 
@@ -347,6 +326,7 @@
             this.btnNuevoProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnNuevoProveedor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNuevoProveedor.UseVisualStyleBackColor = false;
+            this.btnNuevoProveedor.Click += new System.EventHandler(this.btnNuevoProveedor_Click);
             // 
             // btnGrabar
             // 
@@ -367,6 +347,7 @@
             this.btnGrabar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGrabar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGrabar.UseVisualStyleBackColor = false;
+            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
             // 
             // dtwProducto
             // 
@@ -406,6 +387,7 @@
             this.dtwProducto.RowTemplate.Height = 30;
             this.dtwProducto.Size = new System.Drawing.Size(709, 220);
             this.dtwProducto.TabIndex = 60;
+            this.dtwProducto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtwProducto_CellClick);
             // 
             // IdProducto
             // 
@@ -445,7 +427,7 @@
             // 
             this.gbProducto.Controls.Add(this.btnSeleccionarProducto);
             this.gbProducto.Controls.Add(this.btnAñadir);
-            this.gbProducto.Controls.Add(this.txtCosto);
+            this.gbProducto.Controls.Add(this.txtPrecio);
             this.gbProducto.Controls.Add(this.label11);
             this.gbProducto.Controls.Add(this.txtCantidad);
             this.gbProducto.Controls.Add(this.label7);
@@ -482,6 +464,7 @@
             this.btnSeleccionarProducto.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSeleccionarProducto.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSeleccionarProducto.UseVisualStyleBackColor = false;
+            this.btnSeleccionarProducto.Click += new System.EventHandler(this.btnSeleccionarProducto_Click);
             // 
             // btnAñadir
             // 
@@ -503,43 +486,48 @@
             this.btnAñadir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAñadir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAñadir.UseVisualStyleBackColor = false;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
-            // txtCosto
+            // txtPrecio
             // 
-            this.txtCosto.Enabled = false;
-            this.txtCosto.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtCosto.Location = new System.Drawing.Point(339, 71);
-            this.txtCosto.Name = "txtCosto";
-            this.txtCosto.Size = new System.Drawing.Size(111, 26);
-            this.txtCosto.TabIndex = 45;
+            this.txtPrecio.Enabled = false;
+            this.txtPrecio.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtPrecio.Location = new System.Drawing.Point(118, 71);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(111, 26);
+            this.txtPrecio.TabIndex = 45;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
+            this.txtPrecio.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCosto_KeyUp);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.75F);
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.label11.Location = new System.Drawing.Point(258, 71);
+            this.label11.Location = new System.Drawing.Point(46, 74);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(53, 23);
+            this.label11.Size = new System.Drawing.Size(57, 23);
             this.label11.TabIndex = 44;
-            this.label11.Text = "Costo";
+            this.label11.Text = "Precio";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtCantidad
             // 
             this.txtCantidad.Enabled = false;
             this.txtCantidad.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtCantidad.Location = new System.Drawing.Point(118, 68);
+            this.txtCantidad.Location = new System.Drawing.Point(333, 74);
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(111, 26);
             this.txtCantidad.TabIndex = 43;
+            this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
+            this.txtCantidad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCantidad_KeyUp);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.75F);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.label7.Location = new System.Drawing.Point(37, 68);
+            this.label7.Location = new System.Drawing.Point(252, 74);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(78, 23);
             this.label7.TabIndex = 42;
@@ -656,8 +644,8 @@
             this.panel1.PerformLayout();
             this.gbCompra.ResumeLayout(false);
             this.gbCompra.PerformLayout();
-            this.gbProveedor.ResumeLayout(false);
-            this.gbProveedor.PerformLayout();
+            this.gbCliente.ResumeLayout(false);
+            this.gbCliente.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtwProducto)).EndInit();
             this.gbProducto.ResumeLayout(false);
             this.gbProducto.PerformLayout();
@@ -677,19 +665,17 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gbProveedor;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox gbCliente;
+        private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Label label5;
         private FontAwesome.Sharp.IconButton btnSeleccionar;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtContacto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtIdProveedor;
+        private System.Windows.Forms.TextBox txtIdCliente;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.GroupBox gbCompra;
-        private System.Windows.Forms.DateTimePicker dtpfecha;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtIdCompra;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTotal;
@@ -707,7 +693,7 @@
         private System.Windows.Forms.GroupBox gbProducto;
         private FontAwesome.Sharp.IconButton btnSeleccionarProducto;
         private FontAwesome.Sharp.IconButton btnAñadir;
-        private System.Windows.Forms.TextBox txtCosto;
+        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label7;

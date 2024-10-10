@@ -653,7 +653,6 @@
             // 
             // txtIdProveedor
             // 
-            this.txtIdProveedor.Enabled = false;
             this.txtIdProveedor.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtIdProveedor.Location = new System.Drawing.Point(118, 26);
             this.txtIdProveedor.Name = "txtIdProveedor";

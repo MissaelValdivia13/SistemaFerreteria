@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CapaDatos
 {
-    public  class VentasDAO
+    public class VentasDAO
     {
         private Conexion objConecta = new Conexion();
         private SqlConnection conec;
@@ -27,26 +27,93 @@ namespace CapaDatos
             return registros;
         }
 
-        public void insertarVenta(int idCliente, int idEmpleado, string fecha, double total, DataTable table)
+        public Boolean EnviarVentaYDetalle(int idCliente, string fecha, double total, DataTable detalleData, int idEmpleado, string opcion)
         {
-            using (SqlConnection conn = objConecta.Conecta())
+            Boolean aux = false;
+            SqlTransaction transaction = null;
+
+            try
             {
-                using (SqlCommand com = new SqlCommand("GUARDARVENTAYDETALLE", conn))
+                conec = objConecta.Conecta();
+                transaction = conec.BeginTransaction();
+
+                using (SqlCommand com = new SqlCommand("GuardarVentaYDetalles", conec, transaction))
                 {
                     com.CommandType = CommandType.StoredProcedure;
 
                     com.Parameters.AddWithValue("@IdCliente", idCliente);
-                    com.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
                     com.Parameters.AddWithValue("@Fecha", fecha);
                     com.Parameters.AddWithValue("@Total", total);
 
-                    SqlParameter parameter = com.Parameters.AddWithValue("@DP", table);
-                    parameter.SqlDbType = SqlDbType.Structured; 
-                    parameter.TypeName = "DETALLE"; 
+                    SqlParameter parameter = com.Parameters.AddWithValue("@DV", detalleData);
+                    parameter.SqlDbType = SqlDbType.Structured;
+                    parameter.TypeName = "DETAL";
+
+                    com.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
+                    com.Parameters.AddWithValue("@Opcion", opcion);
+
                     com.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    conec.Close();
                 }
             }
+            catch (SqlException ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                aux = true;
+            }
+            return aux;
         }
+
+        public DataSet consultaVentas(string opcion, string valor)
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta())
+                {
+                    using (SqlCommand comando = new SqlCommand("CONSULTAVENTAS", conec))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Opcion", opcion);
+                        comando.Parameters.AddWithValue("@Valor", valor);
+
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            adaptador.Fill(data, "Ventas");
+                        }
+                    }
+                    conec.Close();
+                }
+                return data;
+            }
+
+        }
+        public DataSet consultaDetalleVenta(int idVenta)
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta()) 
+                {
+                    using (SqlCommand comando = new SqlCommand("CONSULTADETALLEVENTA", conec)) 
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+                        comando.Parameters.AddWithValue("@Id", idVenta); 
+
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            adaptador.Fill(data, "DetalleVenta");
+                        }
+                    }
+                    conec.Close(); 
+                }
+                return data; 
+            }
+        }
+
 
     }
 }

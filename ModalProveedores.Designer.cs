@@ -75,6 +75,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(798, 173);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnAceptar
             // 
@@ -121,6 +122,7 @@
             this.groupBox2.Size = new System.Drawing.Size(319, 47);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // panel8
             // 
@@ -195,6 +197,7 @@
             this.gbBusqueda.Size = new System.Drawing.Size(319, 51);
             this.gbBusqueda.TabIndex = 4;
             this.gbBusqueda.TabStop = false;
+            this.gbBusqueda.Enter += new System.EventHandler(this.gbBusqueda_Enter);
             // 
             // txtIdProducto
             // 
@@ -297,6 +300,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(49, 323);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel4
             // 
@@ -306,6 +310,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(47, 323);
             this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // ModalProveedores
             // 

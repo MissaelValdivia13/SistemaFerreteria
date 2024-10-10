@@ -6,6 +6,7 @@ using System.IO.Packaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace CapaDatos
@@ -17,10 +18,17 @@ namespace CapaDatos
         private SqlDataAdapter adaptador;
         private SqlCommand comando;
 
-        public void EnviarCompraYDetalle(int idProveedor, string facturas, string fecha, double iva, double subtotal, DataTable detalleData, int idEmpleado, string opcion)
+        public Boolean EnviarCompraYDetalle(int idProveedor, string facturas, string fecha, double iva, double subtotal, DataTable detalleData, int idEmpleado, string opcion)
         {
-            conec = objConecta.Conecta();
-                using (SqlCommand com = new SqlCommand("GuardarCompraYDetalle", conec))
+            Boolean aux = false;
+            SqlTransaction transaction = null;
+
+            try
+            {
+                conec = objConecta.Conecta();
+                transaction = conec.BeginTransaction();
+
+                using (SqlCommand com = new SqlCommand("GuardarCompraYDetalle", conec, transaction))
                 {
                     com.CommandType = CommandType.StoredProcedure;
 
@@ -34,16 +42,26 @@ namespace CapaDatos
                     parameter.SqlDbType = SqlDbType.Structured;
                     parameter.TypeName = "DETAL";
 
-                    // Parametros del error por si llega a surgir
                     com.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
                     com.Parameters.AddWithValue("@Opcion", opcion);
 
-                   
                     com.ExecuteNonQuery();
+
+                    transaction.Commit();
                     conec.Close();
-                
+                }
             }
+            catch (SqlException ex)
+            {
+                if (transaction != null)
+                {
+                    transaction.Rollback();
+                }
+                aux = true;
+            }
+            return aux;
         }
+            
 
 
 

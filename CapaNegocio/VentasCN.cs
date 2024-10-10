@@ -12,14 +12,25 @@ namespace CapaNegocio
     {
         private VentasDAO ventas = new VentasDAO();
 
-        public void insertarVenta(int idCliente, int idEmpleado, string fecha, double total, DataTable table)
+        public Boolean EnviarVentaYDetalle(int idCliente, string fecha, double total, DataTable detalleData, int idEmpleado, string opcion)
         {
-            ventas.insertarVenta(idCliente, idEmpleado, fecha, total, table);
+            return ventas.EnviarVentaYDetalle(idCliente, fecha, total, detalleData, idEmpleado, opcion);
         }
 
         public int nuevaVenta()
         {
             return ventas.nuevaVenta();
         }
+
+        public DataSet consultaVentas(string opcion, string valor)
+        {
+            return ventas.consultaVentas(opcion, valor);
+        }
+
+        public DataSet consultaDetalleVenta(int idVenta)
+        {
+            return ventas.consultaDetalleVenta(idVenta);
+        }
+
     }
 }

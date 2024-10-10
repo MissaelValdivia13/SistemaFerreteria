@@ -54,6 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encriptacion.cs" />
+    <Compile Include="frmBitacoraErrores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBitacoraErrores.Designer.cs">
+      <DependentUpon>frmBitacoraErrores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +72,12 @@
     <Compile Include="frmConsultaCompras.Designer.cs">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmConsultarVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarVentas.Designer.cs">
+      <DependentUpon>frmConsultarVentas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProducto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +89,12 @@
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalClientes.Designer.cs">
+      <DependentUpon>ModalClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="ModalProductos.cs">
       <SubType>Form</SubType>
@@ -131,17 +149,26 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="frmBitacoraErrores.resx">
+      <DependentUpon>frmBitacoraErrores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaCompras.resx">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarVentas.resx">
+      <DependentUpon>frmConsultarVentas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalClientes.resx">
+      <DependentUpon>ModalClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModalProductos.resx">
       <DependentUpon>ModalProductos.cs</DependentUpon>

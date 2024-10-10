@@ -15,9 +15,9 @@ namespace SistemaFerreteria
     {
         private ProductoCN productoCN = new ProductoCN();
         private string opcion = "id";
-        string id = "", nombre = "";
+        string id = "", nombre = "", precio = "";
 
-        public event Action<string, string> ProductoSeleccionado;
+        public event Action<string, string, string> ProductoSeleccionado;
         public ModalProductos()
         {
             InitializeComponent();
@@ -98,6 +98,7 @@ namespace SistemaFerreteria
             {
                 id = dtwProducto.Rows[e.RowIndex].Cells[0].Value.ToString();
                 nombre = dtwProducto.Rows[e.RowIndex].Cells[2].Value.ToString();
+                precio = dtwProducto.Rows[e.RowIndex].Cells[3].Value.ToString();
                 btnAceptar.Enabled = true;
             }
         }
@@ -114,7 +115,7 @@ namespace SistemaFerreteria
         {
             if (ProductoSeleccionado != null && !string.IsNullOrEmpty(id))
             {
-                ProductoSeleccionado(id, nombre);
+                ProductoSeleccionado(id, nombre, precio);
             }
 
             this.Close();

@@ -168,11 +168,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Malgun Gothic Semilight", 20.75F);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.label1.Location = new System.Drawing.Point(241, 0);
+            this.label1.Location = new System.Drawing.Point(261, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(304, 38);
+            this.label1.Size = new System.Drawing.Size(274, 38);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Listado de Proveedores";
+            this.label1.Text = "Listado de Productos";
             // 
             // btnLimpiar
             // 

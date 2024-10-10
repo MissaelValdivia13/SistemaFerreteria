@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Xml.Serialization;
 using CapaNegocio;
@@ -49,7 +50,7 @@ namespace SistemaFerreteria
             modal.ShowDialog(); 
         }
 
-        private void btnAñadir_Click(object sender, EventArgs e)
+        public void btnAñadir_Click(object sender, EventArgs e)
         {
             int posiciones = dtwProducto.Rows.Count - 1, auxiliar = -1;
             bool existe = false;
@@ -100,10 +101,11 @@ namespace SistemaFerreteria
         private void btnSeleccionarProducto_Click(object sender, EventArgs e)
         {
             ModalProductos modal = new ModalProductos();
-            modal.ProductoSeleccionado += (id, nombre) =>
+            modal.ProductoSeleccionado += (id, nombre, precio) =>
             {
                 txtIdProd.Text = id;
                 txtNombre.Text = nombre;
+                string pre = precio;
                 if(id != "" && nombre != "")
                 {
                     txtCantidad.Enabled = true;
@@ -167,8 +169,6 @@ namespace SistemaFerreteria
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            try
-            {
                 DataTable dataTable = new DataTable();
 
                 dataTable.Columns.Add("IdProducto", typeof(int));
@@ -191,20 +191,21 @@ namespace SistemaFerreteria
 
                 string fecha = $"{dtpfecha.Value.Year}-{dtpfecha.Value.Month:D2}-{dtpfecha.Value.Day:D2}";
                 int idCompra = Convert.ToInt32(txtIdCompra.Text);
-                compra.EnviarCompraYDetalle(Convert.ToInt32(txtIdProveedor.Text), txtFactura.Text, fecha, Convert.ToDouble(txtIva.Text), Convert.ToDouble(txtSubtotal.Text), dataTable, empleado, opcion);
+                Boolean aux = compra.EnviarCompraYDetalle(Convert.ToInt32(txtIdProveedor.Text), txtFactura.Text, fecha, Convert.ToDouble(txtIva.Text), Convert.ToDouble(txtSubtotal.Text), dataTable, empleado, opcion);
+
+                if(aux == true)
+                {
+                    MessageBox.Show("No se pudo guardar correctamente ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Se guardo correctamente la compra", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
 
                 limpiar();
                 limpiarCamposAñadir();
                 habilitarGb(false);
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show("No se pudo guardar correctamente ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error general: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
 

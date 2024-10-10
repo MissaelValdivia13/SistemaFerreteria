@@ -35,5 +35,10 @@ namespace CapaNegocio
         {
             objCliente.actualizaCliente(idCliente, nombre, Telefono, email, domicilio);
         }
+
+        public DataSet consultaClientesD(string opcion, string valor)
+        {
+            return objCliente.consultaClientesD(opcion, valor);
+        }
     }
 }

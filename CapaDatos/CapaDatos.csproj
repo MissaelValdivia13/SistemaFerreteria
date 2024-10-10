@@ -160,6 +160,7 @@
     <Compile Include="ComprasDAO.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="EmpleadoDAO.cs" />
+    <Compile Include="ErroresDAO.cs" />
     <Compile Include="ProductosDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedoresDAO.cs" />

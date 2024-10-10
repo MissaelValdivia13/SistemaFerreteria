@@ -47,6 +47,7 @@
             this.iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             this.btnRegistrarVenta = new FontAwesome.Sharp.IconMenuItem();
             this.btnConsultarVenta = new FontAwesome.Sharp.IconMenuItem();
+            this.btnBitacoraErrores = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -124,7 +125,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCatalagos,
             this.iconMenuItem1,
-            this.iconMenuItem2});
+            this.iconMenuItem2,
+            this.btnBitacoraErrores});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1159, 69);
@@ -162,7 +164,7 @@
             this.btnProductos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnProductos.IconSize = 60;
             this.btnProductos.Name = "btnProductos";
-            this.btnProductos.Size = new System.Drawing.Size(180, 28);
+            this.btnProductos.Size = new System.Drawing.Size(174, 28);
             this.btnProductos.Text = "Producto";
             this.btnProductos.Click += new System.EventHandler(this.btnProductos_Click);
             // 
@@ -174,7 +176,7 @@
             this.btnClientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnClientes.IconSize = 60;
             this.btnClientes.Name = "btnClientes";
-            this.btnClientes.Size = new System.Drawing.Size(180, 28);
+            this.btnClientes.Size = new System.Drawing.Size(174, 28);
             this.btnClientes.Text = "Clientes";
             this.btnClientes.Click += new System.EventHandler(this.btnClientes_Click);
             // 
@@ -186,7 +188,7 @@
             this.btnEmpleado.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEmpleado.IconSize = 60;
             this.btnEmpleado.Name = "btnEmpleado";
-            this.btnEmpleado.Size = new System.Drawing.Size(180, 28);
+            this.btnEmpleado.Size = new System.Drawing.Size(174, 28);
             this.btnEmpleado.Text = "Empleado";
             this.btnEmpleado.Click += new System.EventHandler(this.btnEmpleado_Click);
             // 
@@ -198,7 +200,7 @@
             this.btnCategoria.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCategoria.IconSize = 60;
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(180, 28);
+            this.btnCategoria.Size = new System.Drawing.Size(174, 28);
             this.btnCategoria.Text = "Categoría";
             this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
             // 
@@ -243,7 +245,7 @@
             this.btnRegistrarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarCompra.IconSize = 60;
             this.btnRegistrarCompra.Name = "btnRegistrarCompra";
-            this.btnRegistrarCompra.Size = new System.Drawing.Size(180, 28);
+            this.btnRegistrarCompra.Size = new System.Drawing.Size(152, 28);
             this.btnRegistrarCompra.Text = "Registrar";
             this.btnRegistrarCompra.Click += new System.EventHandler(this.btnRegistrarCompra_Click);
             // 
@@ -255,7 +257,7 @@
             this.btnConsultarCompra.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultarCompra.IconSize = 60;
             this.btnConsultarCompra.Name = "btnConsultarCompra";
-            this.btnConsultarCompra.Size = new System.Drawing.Size(180, 28);
+            this.btnConsultarCompra.Size = new System.Drawing.Size(152, 28);
             this.btnConsultarCompra.Text = "Consultar";
             this.btnConsultarCompra.Click += new System.EventHandler(this.btnConsultarCompra_Click);
             // 
@@ -301,6 +303,25 @@
             this.btnConsultarVenta.Name = "btnConsultarVenta";
             this.btnConsultarVenta.Size = new System.Drawing.Size(180, 28);
             this.btnConsultarVenta.Text = "Consultar";
+            this.btnConsultarVenta.Click += new System.EventHandler(this.btnConsultarVenta_Click);
+            // 
+            // btnBitacoraErrores
+            // 
+            this.btnBitacoraErrores.AutoSize = false;
+            this.btnBitacoraErrores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
+            this.btnBitacoraErrores.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.5F);
+            this.btnBitacoraErrores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnBitacoraErrores.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
+            this.btnBitacoraErrores.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnBitacoraErrores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBitacoraErrores.IconSize = 55;
+            this.btnBitacoraErrores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnBitacoraErrores.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
+            this.btnBitacoraErrores.Name = "btnBitacoraErrores";
+            this.btnBitacoraErrores.Size = new System.Drawing.Size(122, 70);
+            this.btnBitacoraErrores.Text = "Bitacora de Errores";
+            this.btnBitacoraErrores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBitacoraErrores.Click += new System.EventHandler(this.btnBitacoraErrores_Click);
             // 
             // SistemaFerreteria
             // 
@@ -343,6 +364,7 @@
         private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
         private FontAwesome.Sharp.IconMenuItem btnRegistrarVenta;
         private FontAwesome.Sharp.IconMenuItem btnConsultarVenta;
+        private FontAwesome.Sharp.IconMenuItem btnBitacoraErrores;
     }
 }
 

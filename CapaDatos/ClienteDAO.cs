@@ -97,5 +97,20 @@ namespace CapaDatos
             }
         }
 
+        public DataSet consultaClientesD(string opcion, string valor)
+        {
+            using (DataSet data = new DataSet())
+            {
+                conec = objConecta.Conecta();
+                adaptador = new SqlDataAdapter("CONSULTACLIENTESDINAMICA", conec);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adaptador.SelectCommand.Parameters.AddWithValue("@Opcion", opcion);
+                adaptador.SelectCommand.Parameters.AddWithValue("@Valor", valor);
+                adaptador.Fill(data, "SUBE");
+                conec.Close();
+                return data;
+            }
+        }
+
     }
 }

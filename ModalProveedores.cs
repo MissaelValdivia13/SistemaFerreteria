@@ -92,6 +92,31 @@ namespace SistemaFerreteria
             llenarDtw(txtIdProducto.Text);
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gbBusqueda_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             dtwProveedores.DataSource = null;

@@ -24,7 +24,7 @@ namespace SistemaFerreteria
 
         private void pnLogin_Paint(object sender, PaintEventArgs e)
         {
-            Color fondoPanelColor = ColorTranslator.FromHtml("#f5f6f6");
+            Color fondoPanelColor = ColorTranslator.FromHtml("#242728");
 
             using (SolidBrush brush = new SolidBrush(fondoPanelColor))
             {
