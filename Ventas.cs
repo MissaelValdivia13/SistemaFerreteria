@@ -14,7 +14,7 @@ namespace SistemaFerreteria
 {
     public partial class Ventas : Form
     {
-        private double sub = 0, total = 0, iva = 0;
+        private double sub = 0;
         private string opcion;
         private int idEmpleado;
         VentasCN venta = new VentasCN();
@@ -33,6 +33,7 @@ namespace SistemaFerreteria
 
         private void btnSeleccionarProducto_Click(object sender, EventArgs e)
         {
+
             ModalProductos modal = new ModalProductos();
             modal.ProductoSeleccionado += (id, nombre, precio) =>
             {
@@ -52,28 +53,27 @@ namespace SistemaFerreteria
         private void btnNuevoProveedor_Click(object sender, EventArgs e)
         {
             habilitarCampos(true);
+            txtIdVenta.Text =  venta.nuevaVenta().ToString();
+            sub = 0;
         }
 
         private void habilitarCampos(Boolean opcion)
         {
             gbProducto.Enabled = opcion;
             gbCliente.Enabled = opcion;
+            gbCompra.Enabled = opcion;
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             ModalClientes modal = new ModalClientes();
-            modal.ClienteSeleccionado += (id, nombre, telefono, domicilio) =>
+            modal.ClienteSeleccionado += (id, nombre, telefono, domicilio, saldo) =>
             {
                 txtIdCliente.Text = id;
                 txtContacto.Text = nombre;
                 txtTelefono.Text = telefono;
                 txtDomicilio.Text = domicilio;
-                if (id != "" && nombre != "")
-                {
-                    txtCantidad.Enabled = true;
-                    txtPrecio.Enabled = true;
-                }
+                
             };
             modal.StartPosition = FormStartPosition.CenterScreen;
             modal.ShowDialog();
@@ -189,46 +189,55 @@ namespace SistemaFerreteria
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-                DataTable dataTable = new DataTable();
+            double total = Convert.ToDouble(txtTotal.Text);
+            Char estado = 'C';
+            FormPago formPago = new FormPago(total);
+            var result = formPago.ShowDialog();
 
-                dataTable.Columns.Add("IdProducto", typeof(int));
-                dataTable.Columns.Add("Cantidad", typeof(int));
-                dataTable.Columns.Add("Precio", typeof(decimal));
+            double cambio = formPago.Cambio;
 
-                foreach (DataGridViewRow row in dtwProducto.Rows)
+            if(cambio == 0)
+            {
+                estado = 'P';
+            }
+            MessageBox.Show("" + cambio);
+
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("IdProducto", typeof(int));
+            dataTable.Columns.Add("Cantidad", typeof(int));
+            dataTable.Columns.Add("Precio", typeof(decimal));
+
+            foreach (DataGridViewRow row in dtwProducto.Rows)
+            {
+                if (!row.IsNewRow)
                 {
-                    if (!row.IsNewRow)
-                    {
-                        DataRow dataRow = dataTable.NewRow();
-
-                        dataRow["IdProducto"] = row.Cells[0].Value ?? DBNull.Value;
-                        dataRow["Cantidad"] = row.Cells[2].Value ?? DBNull.Value;
-                        dataRow["Precio"] = row.Cells[3].Value ?? DBNull.Value;
-
-                        dataTable.Rows.Add(dataRow);
-                    }
+                    DataRow dataRow = dataTable.NewRow();
+                    dataRow["IdProducto"] = row.Cells[0].Value ?? DBNull.Value;
+                    dataRow["Cantidad"] = row.Cells[2].Value ?? DBNull.Value;
+                    dataRow["Precio"] = row.Cells[3].Value ?? DBNull.Value;
+                    dataTable.Rows.Add(dataRow);
                 }
+            }
 
-                // Obtener la fecha del sistema
-                string fecha = DateTime.Now.ToString("yyyy-MM-dd");
-                int idCliente = Convert.ToInt32(txtIdCliente.Text);
-                double total = Convert.ToDouble(txtTotal.Text);
+            string fecha = DateTime.Now.ToString("yyyy-MM-dd");
+            int idCliente = Convert.ToInt32(txtIdCliente.Text);
 
-                Boolean aux = venta.EnviarVentaYDetalle(idCliente, fecha, total, dataTable, idEmpleado, opcion);
-                if (aux == true)
-                {
-                    MessageBox.Show("No se pudo guardar correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show("Se guardo correctamente la Venta", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Boolean aux = venta.EnviarVentaYDetalle(idCliente, idEmpleado, fecha, total,cambio,estado, dataTable, opcion);
 
-                }
-            limpiar();
+            if (aux)
+            {
+                MessageBox.Show("No se pudo guardar correctamente", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                MessageBox.Show("Se guardó correctamente la venta", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                limpiar();
                 limpiarCamposAñadir();
                 habilitarGb(false);
-           
+            }
         }
+
+
 
 
 
@@ -259,7 +268,7 @@ namespace SistemaFerreteria
             txtContacto.Text = "";
             txtDomicilio.Text = "";
             txtIdCliente.Text = "";
-            txtIdCompra.Text = "";
+            txtIdVenta.Text = "";
             txtIdProd.Text = "";
             txtNombre.Text = "";
             txtPrecio.Text = "";

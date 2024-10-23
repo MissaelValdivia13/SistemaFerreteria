@@ -34,7 +34,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.gbCompra = new System.Windows.Forms.GroupBox();
-            this.txtIdCompra = new System.Windows.Forms.TextBox();
+            this.txtIdVenta = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.gbCliente = new System.Windows.Forms.GroupBox();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
@@ -116,7 +116,7 @@
             // 
             // gbCompra
             // 
-            this.gbCompra.Controls.Add(this.txtIdCompra);
+            this.gbCompra.Controls.Add(this.txtIdVenta);
             this.gbCompra.Controls.Add(this.label8);
             this.gbCompra.Enabled = false;
             this.gbCompra.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.75F);
@@ -128,14 +128,14 @@
             this.gbCompra.TabStop = false;
             this.gbCompra.Text = "Información de la Compra";
             // 
-            // txtIdCompra
+            // txtIdVenta
             // 
-            this.txtIdCompra.Enabled = false;
-            this.txtIdCompra.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
-            this.txtIdCompra.Location = new System.Drawing.Point(100, 29);
-            this.txtIdCompra.Name = "txtIdCompra";
-            this.txtIdCompra.Size = new System.Drawing.Size(111, 26);
-            this.txtIdCompra.TabIndex = 39;
+            this.txtIdVenta.Enabled = false;
+            this.txtIdVenta.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
+            this.txtIdVenta.Location = new System.Drawing.Point(100, 29);
+            this.txtIdVenta.Name = "txtIdVenta";
+            this.txtIdVenta.Size = new System.Drawing.Size(111, 26);
+            this.txtIdVenta.TabIndex = 39;
             // 
             // label8
             // 
@@ -256,7 +256,6 @@
             // 
             // txtIdCliente
             // 
-            this.txtIdCliente.Enabled = false;
             this.txtIdCliente.Font = new System.Drawing.Font("Mongolian Baiti", 12.25F, System.Drawing.FontStyle.Bold);
             this.txtIdCliente.Location = new System.Drawing.Point(93, 32);
             this.txtIdCliente.Name = "txtIdCliente";
@@ -676,7 +675,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
         private System.Windows.Forms.GroupBox gbCompra;
-        private System.Windows.Forms.TextBox txtIdCompra;
+        private System.Windows.Forms.TextBox txtIdVenta;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label14;

@@ -28,7 +28,7 @@ namespace CapaDatos
             }        
         }
 
-        public void insertaCliente(string nombre, string telefono, string email, string domicilio)
+        public void insertaCliente(string nombre, string telefono, string email, string domicilio, double saldo)
         {
             try
             {
@@ -39,6 +39,7 @@ namespace CapaDatos
                 adaptador.SelectCommand.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = telefono;
                 adaptador.SelectCommand.Parameters.Add("@Email", SqlDbType.VarChar).Value = email;
                 adaptador.SelectCommand.Parameters.Add("@Domicilio", SqlDbType.VarChar).Value = domicilio;
+                adaptador.SelectCommand.Parameters.Add("@Saldo", SqlDbType.Money).Value = saldo;
                 adaptador.SelectCommand.ExecuteNonQuery();
 
             }
@@ -111,6 +112,24 @@ namespace CapaDatos
                 return data;
             }
         }
+
+        public DataSet consultaClientesConSaldo(string opcion, string valor)
+        {
+            using (DataSet data = new DataSet())
+            {
+                conec = objConecta.Conecta();
+                adaptador = new SqlDataAdapter("ObtenerClientesConSaldo", conec);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adaptador.SelectCommand.Parameters.AddWithValue("@Opcion", opcion);
+                adaptador.SelectCommand.Parameters.AddWithValue("@Valor", valor);
+
+                adaptador.Fill(data, "ClientesConSaldo");
+                conec.Close();
+                return data;
+            }
+        }
+
+
 
     }
 }

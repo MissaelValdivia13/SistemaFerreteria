@@ -157,6 +157,7 @@
   <ItemGroup>
     <Compile Include="CategoriaDAO.cs" />
     <Compile Include="ClienteDAO.cs" />
+    <Compile Include="CobroDAO.cs" />
     <Compile Include="ComprasDAO.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="EmpleadoDAO.cs" />

@@ -13,9 +13,8 @@ namespace SistemaFerreteria
     public partial class ModalClientes : Form
     {
         ClienteCN cliente =  new ClienteCN();
-        string opcion = "id", id = "", nombre = "", telefono= "", domicilio;
-        public event Action<string, string, string, string> ClienteSeleccionado;
-
+        string opcion = "id", id = "", nombre = "", telefono= "", domicilio= "", saldo = "";
+        public event Action<string, string, string, string, string> ClienteSeleccionado;
 
         private void RestablecerBotones()
         {
@@ -31,6 +30,7 @@ namespace SistemaFerreteria
         public ModalClientes()
         {
             InitializeComponent();
+
         }
 
         private void btnEmpresa_Click(object sender, EventArgs e)
@@ -69,6 +69,7 @@ namespace SistemaFerreteria
                 nombre = dtwCliente.Rows[e.RowIndex].Cells[1].Value.ToString();
                 telefono = dtwCliente.Rows[e.RowIndex].Cells[2].Value.ToString();
                 domicilio = dtwCliente.Rows[e.RowIndex].Cells[4].Value.ToString();
+                saldo = dtwCliente.Rows[e.RowIndex].Cells[5].Value.ToString();
                 btnAceptar.Enabled = true;
             }
         }
@@ -91,7 +92,7 @@ namespace SistemaFerreteria
         {
             if (ClienteSeleccionado != null && !string.IsNullOrEmpty(id))
             {
-                ClienteSeleccionado(id, nombre, telefono, domicilio);
+                ClienteSeleccionado(id, nombre, telefono, domicilio, saldo);
             }
 
             this.Close();
@@ -99,7 +100,10 @@ namespace SistemaFerreteria
 
         private void llenarDtw(string valor)
         {
-            DataSet ds = cliente.consultaClientesD(opcion, valor);
+            //consultaClientesD
+            //consultaClientesConSaldo
+            //DataSet ds = cliente.consultaClientesD(opcion, valor);
+            DataSet ds = cliente.consultaClientesConSaldo(opcion, valor);
             if (ds.Tables.Count > 0)
             {
                 dtwCliente.DataSource = ds.Tables[0];

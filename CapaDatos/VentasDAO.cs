@@ -22,12 +22,12 @@ namespace CapaDatos
             conec = objConecta.Conecta();
             adaptador = new SqlDataAdapter("NUEVAVENTA", conec);
             adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
-            int registros = Convert.ToInt32(adaptador.SelectCommand.ExecuteScalar());
+            int registros = Convert.ToInt32(adaptador.SelectCommand.ExecuteScalar()) + 1;
             conec.Close();
             return registros;
         }
 
-        public Boolean EnviarVentaYDetalle(int idCliente, string fecha, double total, DataTable detalleData, int idEmpleado, string opcion)
+        public Boolean EnviarVentaYDetalle(int idCliente, int idEmpleado, string fecha, double total,double saldo, char estado, DataTable detalleData, string opcion)
         {
             Boolean aux = false;
             SqlTransaction transaction = null;
@@ -35,39 +35,44 @@ namespace CapaDatos
             try
             {
                 conec = objConecta.Conecta();
-                transaction = conec.BeginTransaction();
 
                 using (SqlCommand com = new SqlCommand("GuardarVentaYDetalles", conec, transaction))
                 {
                     com.CommandType = CommandType.StoredProcedure;
 
                     com.Parameters.AddWithValue("@IdCliente", idCliente);
+                    com.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
                     com.Parameters.AddWithValue("@Fecha", fecha);
                     com.Parameters.AddWithValue("@Total", total);
+                    com.Parameters.AddWithValue("@Saldo", saldo);
+                    com.Parameters.AddWithValue("@Estado", estado);
 
                     SqlParameter parameter = com.Parameters.AddWithValue("@DV", detalleData);
                     parameter.SqlDbType = SqlDbType.Structured;
-                    parameter.TypeName = "DETAL";
+                    parameter.TypeName = "DETAL"; 
 
-                    com.Parameters.AddWithValue("@IdEmpleado", idEmpleado);
                     com.Parameters.AddWithValue("@Opcion", opcion);
 
                     com.ExecuteNonQuery();
 
-                    transaction.Commit();
-                    conec.Close();
+                    aux = false;
                 }
             }
             catch (SqlException ex)
             {
-                if (transaction != null)
-                {
-                    transaction.Rollback();
-                }
-                aux = true;
+                aux = true;  
             }
+            finally
+            {
+                if (conec != null && conec.State == ConnectionState.Open)
+                {
+                    conec.Close();
+                }
+            }
+
             return aux;
         }
+
 
         public DataSet consultaVentas(string opcion, string valor)
         {
@@ -114,6 +119,24 @@ namespace CapaDatos
             }
         }
 
+        public DataSet ObtenerVentaPorId(int idVenta)
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta())
+                {
+                    SqlDataAdapter adaptador = new SqlDataAdapter("ObtenerVentaPorId", conec);
+                    adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                    adaptador.SelectCommand.Parameters.AddWithValue("@IdVenta", idVenta);
+                    adaptador.Fill(data, "VentaPorId");
+                    conec.Close();
+                }
+                return data;
+            }
+        }
 
     }
+
+   
+
 }

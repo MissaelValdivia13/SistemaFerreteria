@@ -44,10 +44,13 @@
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.btnRegistrarCompra = new FontAwesome.Sharp.IconMenuItem();
             this.btnConsultarCompra = new FontAwesome.Sharp.IconMenuItem();
-            this.iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
+            this.btnVentas = new FontAwesome.Sharp.IconMenuItem();
             this.btnRegistrarVenta = new FontAwesome.Sharp.IconMenuItem();
             this.btnConsultarVenta = new FontAwesome.Sharp.IconMenuItem();
             this.btnBitacoraErrores = new FontAwesome.Sharp.IconMenuItem();
+            this.btnCobros = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
+            this.btnConsultarCobros = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -125,7 +128,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnCatalagos,
             this.iconMenuItem1,
-            this.iconMenuItem2,
+            this.btnVentas,
+            this.btnCobros,
             this.btnBitacoraErrores});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -261,25 +265,25 @@
             this.btnConsultarCompra.Text = "Consultar";
             this.btnConsultarCompra.Click += new System.EventHandler(this.btnConsultarCompra_Click);
             // 
-            // iconMenuItem2
+            // btnVentas
             // 
-            this.iconMenuItem2.AutoSize = false;
-            this.iconMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
-            this.iconMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnVentas.AutoSize = false;
+            this.btnVentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
+            this.btnVentas.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnRegistrarVenta,
             this.btnConsultarVenta});
-            this.iconMenuItem2.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.5F);
-            this.iconMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
-            this.iconMenuItem2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconMenuItem2.IconSize = 55;
-            this.iconMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.iconMenuItem2.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
-            this.iconMenuItem2.Name = "iconMenuItem2";
-            this.iconMenuItem2.Size = new System.Drawing.Size(122, 70);
-            this.iconMenuItem2.Text = "Ventas";
-            this.iconMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnVentas.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.5F);
+            this.btnVentas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnVentas.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
+            this.btnVentas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnVentas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnVentas.IconSize = 55;
+            this.btnVentas.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Size = new System.Drawing.Size(122, 70);
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // btnRegistrarVenta
             // 
@@ -323,6 +327,50 @@
             this.btnBitacoraErrores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnBitacoraErrores.Click += new System.EventHandler(this.btnBitacoraErrores_Click);
             // 
+            // btnCobros
+            // 
+            this.btnCobros.AutoSize = false;
+            this.btnCobros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
+            this.btnCobros.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iconMenuItem3,
+            this.btnConsultarCobros});
+            this.btnCobros.Font = new System.Drawing.Font("Malgun Gothic Semilight", 12.5F);
+            this.btnCobros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnCobros.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
+            this.btnCobros.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnCobros.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCobros.IconSize = 55;
+            this.btnCobros.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnCobros.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
+            this.btnCobros.Name = "btnCobros";
+            this.btnCobros.Size = new System.Drawing.Size(122, 70);
+            this.btnCobros.Text = "Cobros";
+            this.btnCobros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
+            // iconMenuItem3
+            // 
+            this.iconMenuItem3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.iconMenuItem3.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.iconMenuItem3.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.iconMenuItem3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem3.IconSize = 60;
+            this.iconMenuItem3.Name = "iconMenuItem3";
+            this.iconMenuItem3.Size = new System.Drawing.Size(180, 28);
+            this.iconMenuItem3.Text = "Registrar";
+            this.iconMenuItem3.Click += new System.EventHandler(this.iconMenuItem3_Click);
+            // 
+            // btnConsultarCobros
+            // 
+            this.btnConsultarCobros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnConsultarCobros.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnConsultarCobros.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnConsultarCobros.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConsultarCobros.IconSize = 60;
+            this.btnConsultarCobros.Name = "btnConsultarCobros";
+            this.btnConsultarCobros.Size = new System.Drawing.Size(180, 28);
+            this.btnConsultarCobros.Text = "Consultar";
+            this.btnConsultarCobros.Click += new System.EventHandler(this.btnConsultarCobros_Click);
+            // 
             // SistemaFerreteria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,10 +409,13 @@
         private FontAwesome.Sharp.IconMenuItem btnConsultarCompra;
         private System.Windows.Forms.Label lbEmpleado;
         private System.Windows.Forms.Label lbNombre;
-        private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
+        private FontAwesome.Sharp.IconMenuItem btnVentas;
         private FontAwesome.Sharp.IconMenuItem btnRegistrarVenta;
         private FontAwesome.Sharp.IconMenuItem btnConsultarVenta;
         private FontAwesome.Sharp.IconMenuItem btnBitacoraErrores;
+        private FontAwesome.Sharp.IconMenuItem btnCobros;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem3;
+        private FontAwesome.Sharp.IconMenuItem btnConsultarCobros;
     }
 }
 

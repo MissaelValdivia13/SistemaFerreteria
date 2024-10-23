@@ -12,10 +12,11 @@ namespace CapaNegocio
     {
         private VentasDAO ventas = new VentasDAO();
 
-        public Boolean EnviarVentaYDetalle(int idCliente, string fecha, double total, DataTable detalleData, int idEmpleado, string opcion)
+        public Boolean EnviarVentaYDetalle(int idCliente, int idEmpleado, string fecha, double total, double saldo , char estado,DataTable detalleData, string opcion)
         {
-            return ventas.EnviarVentaYDetalle(idCliente, fecha, total, detalleData, idEmpleado, opcion);
+            return ventas.EnviarVentaYDetalle(idCliente, idEmpleado, fecha, total, saldo, estado, detalleData, opcion);
         }
+
 
         public int nuevaVenta()
         {
@@ -30,6 +31,11 @@ namespace CapaNegocio
         public DataSet consultaDetalleVenta(int idVenta)
         {
             return ventas.consultaDetalleVenta(idVenta);
+        }
+
+        public DataSet ObtenerVentaPorId(int idVenta)
+        {
+            return ventas.ObtenerVentaPorId(idVenta);
         }
 
     }

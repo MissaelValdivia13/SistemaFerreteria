@@ -21,9 +21,9 @@ namespace CapaNegocio
             return objCliente.consultaClientes();
         }
 
-        public void insertaCliente(string nombre, string telefono, string email, string domicilio)
+        public void insertaCliente(string nombre, string telefono, string email, string domicilio, double saldo)
         {
-            objCliente.insertaCliente(nombre,telefono,email,domicilio);
+            objCliente.insertaCliente(nombre,telefono,email,domicilio, saldo);
         }
 
         public int nuevoCLiente()
@@ -40,5 +40,11 @@ namespace CapaNegocio
         {
             return objCliente.consultaClientesD(opcion, valor);
         }
+
+        public DataSet consultaClientesConSaldo(string opcion, string valor)
+        {
+            return objCliente.consultaClientesConSaldo(opcion, valor);
+        }
+
     }
 }

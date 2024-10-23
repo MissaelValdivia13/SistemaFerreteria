@@ -54,11 +54,23 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encriptacion.cs" />
+    <Compile Include="FormPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPago.Designer.cs">
+      <DependentUpon>FormPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBitacoraErrores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmBitacoraErrores.Designer.cs">
       <DependentUpon>frmBitacoraErrores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobros.Designer.cs">
+      <DependentUpon>frmCobros.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCompras.cs">
       <SubType>Form</SubType>
@@ -71,6 +83,12 @@
     </Compile>
     <Compile Include="frmConsultaCompras.Designer.cs">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConsultarCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConsultarCobro.Designer.cs">
+      <DependentUpon>frmConsultarCobro.cs</DependentUpon>
     </Compile>
     <Compile Include="frmConsultarVentas.cs">
       <SubType>Form</SubType>
@@ -149,14 +167,23 @@
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormPago.resx">
+      <DependentUpon>FormPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBitacoraErrores.resx">
       <DependentUpon>frmBitacoraErrores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobros.resx">
+      <DependentUpon>frmCobros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCompras.resx">
       <DependentUpon>frmCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultaCompras.resx">
       <DependentUpon>frmConsultaCompras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConsultarCobro.resx">
+      <DependentUpon>frmConsultarCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmConsultarVentas.resx">
       <DependentUpon>frmConsultarVentas.cs</DependentUpon>

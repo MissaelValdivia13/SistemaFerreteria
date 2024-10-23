@@ -119,5 +119,20 @@ namespace SistemaFerreteria
             frmBitacoraErrores frmBitacoraErrores = new frmBitacoraErrores();
             AbrirFrom(frmBitacoraErrores);
         }
+
+        private void iconMenuItem3_Click(object sender, EventArgs e)
+        {
+            string[] partes = lbEmpleado.Text.Split(':');
+            string id = partes[1].Trim();
+            int idEmpleado = Convert.ToInt32(id);
+            frmCobros frmCobros = new frmCobros(idEmpleado);
+            AbrirFrom(frmCobros);
+        }
+
+        private void btnConsultarCobros_Click(object sender, EventArgs e)
+        {
+            frmConsultarCobro cobro = new frmConsultarCobro();
+            AbrirFrom(cobro);
+        }
     }
 }

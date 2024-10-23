@@ -33,3 +33,6 @@ C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\Sis
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.ModalClientes.resources
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmConsultarVentas.resources
 C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmBitacoraErrores.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.FormPago.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmCobros.resources
+C:\Users\missa\OneDrive\Documentos\Semestre 7\Sistemas Integrales de N Capas\SistemaFerreteria\obj\Debug\SistemaFerreteria.frmConsultarCobro.resources

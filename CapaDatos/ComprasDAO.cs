@@ -26,7 +26,7 @@ namespace CapaDatos
             try
             {
                 conec = objConecta.Conecta();
-                transaction = conec.BeginTransaction();
+                //transaction = conec.BeginTransaction();
 
                 using (SqlCommand com = new SqlCommand("GuardarCompraYDetalle", conec, transaction))
                 {
@@ -47,16 +47,16 @@ namespace CapaDatos
 
                     com.ExecuteNonQuery();
 
-                    transaction.Commit();
+                    //transaction.Commit();
                     conec.Close();
                 }
             }
             catch (SqlException ex)
             {
-                if (transaction != null)
+                /*if (transaction != null)
                 {
                     transaction.Rollback();
-                }
+                }*/
                 aux = true;
             }
             return aux;

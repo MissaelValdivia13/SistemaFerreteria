@@ -30,7 +30,7 @@ namespace SistemaFerreteria
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
-            cliente.insertaCliente(txtNombre.Text, txtTelefono.Text, txtEmail.Text, txtDomicilio.Text);
+            cliente.insertaCliente(txtNombre.Text, txtTelefono.Text, txtEmail.Text, txtDomicilio.Text, 0);
             llenarDtw();
             habilitarDesabilitar(false);
             limpiarCampos();
@@ -106,6 +106,7 @@ namespace SistemaFerreteria
                 MessageBox.Show("No se encontraron datos para mostrar.");
             }
             dtwClientes.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+           
         }
     }
 }
