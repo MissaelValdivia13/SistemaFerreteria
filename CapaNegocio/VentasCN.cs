@@ -38,5 +38,21 @@ namespace CapaNegocio
             return ventas.ObtenerVentaPorId(idVenta);
         }
 
+        public DataSet reportePeriodo(string inicio, string fin)
+        {
+            return ventas.reportePeriodo(inicio, fin);
+        }
+        public DataSet reporteEmpleadoPeriodo(string empleado, string inicio, string fin)
+        {
+            return ventas.reporteEmpleadoPeriodo(empleado,inicio,fin);
+        }
+        public DataSet rankingVentasCliente(string inicio, string fin)
+        {
+            return ventas.rankingVentasEmpleado(inicio, fin);
+        }
+        public DataSet ObtenerComparacionVentasMensuales()
+        {
+            return ventas.ObtenerComparacionVentasMensuales();
+        }
     }
 }

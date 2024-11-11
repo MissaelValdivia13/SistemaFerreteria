@@ -298,6 +298,7 @@
             this.dtwCompra.Size = new System.Drawing.Size(549, 278);
             this.dtwCompra.TabIndex = 34;
             this.dtwCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtwCompra_CellClick);
+            this.dtwCompra.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtwCompra_CellContentClick);
             // 
             // gbBusqueda
             // 

@@ -278,6 +278,7 @@
             this.dtwCliente.Size = new System.Drawing.Size(625, 282);
             this.dtwCliente.TabIndex = 32;
             this.dtwCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtwCliente_CellClick);
+            this.dtwCliente.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtwCliente_CellContentClick);
             // 
             // ModalClientes
             // 

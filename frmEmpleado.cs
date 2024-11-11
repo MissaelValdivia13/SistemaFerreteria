@@ -27,17 +27,26 @@ namespace SistemaFerreteria
 
         private void llenarData()
         {
-            DataSet ds = empleado.consultaEmpleados();
+            try
+            {
+                DataSet ds = empleado.consultaEmpleados();
 
-            if (ds.Tables.Count > 0)
-            {
-                dtwEmpleado.DataSource = ds.Tables[0];
+                if (ds.Tables.Count > 0)
+                {
+                    dtwEmpleado.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para mostrar.");
+                }
+                dtwEmpleado.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontraron datos para mostrar.");
+                MessageBox.Show("Ocurrio un Error: " + ex.Message);
+                RespaldoCN respaldo = new RespaldoCN();
+                respaldo.InsertarError(1, "frmEmpleado", ex.Message);
             }
-            dtwEmpleado.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void limpiarCampos()

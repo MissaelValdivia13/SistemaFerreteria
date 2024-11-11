@@ -36,5 +36,15 @@ namespace CapaNegocio
         {
             return productsDAO.consultaProductos(opcion, valor);
         }
+
+        public DataSet ObtenerRankingProductos()
+        {
+            return productsDAO.ObtenerRankingProductos();
+        }
+
+        public DataSet ObtenerProductosMasRentables()
+        {
+            return productsDAO.ObtenerProductosMasRentables();
+        }
     }
 }

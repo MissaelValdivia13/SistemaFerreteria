@@ -67,16 +67,25 @@ namespace SistemaFerreteria
 
         private void llenarDtw(string valor)
         {
-            DataSet ds = VentasCN.consultaVentas(opcion, valor);
-            if (ds.Tables.Count > 0)
+            try
             {
-                dtwCompra.DataSource = ds.Tables[0];
+                DataSet ds = VentasCN.consultaVentas(opcion, valor);
+                if (ds.Tables.Count > 0)
+                {
+                    dtwCompra.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para mostrar");
+                }
+                dtwCompra.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontraron datos para mostrar");
+                MessageBox.Show("Ocurrio un Error: " + ex.Message);
+                RespaldoCN respaldo = new RespaldoCN();
+                respaldo.InsertarError(1, "frmConsultarVenta", ex.Message);
             }
-            dtwCompra.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void frmConsultarVentas_Load(object sender, EventArgs e)

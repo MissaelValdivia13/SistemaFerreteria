@@ -81,16 +81,25 @@ namespace SistemaFerreteria
 
         private void llenarDtw(string valor)
         {
-            DataSet ds = compra.consultaCompra(opcion, valor);
-            if (ds.Tables.Count > 0)
+            try
             {
-                dtwCompra.DataSource = ds.Tables[0];
+                DataSet ds = compra.consultaCompra(opcion, valor);
+                if (ds.Tables.Count > 0)
+                {
+                    dtwCompra.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para mostrar");
+                }
+                dtwCompra.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontraron datos para mostrar");
+                MessageBox.Show("Ocurrio un Error: " + ex.Message);
+                RespaldoCN respaldo = new RespaldoCN();
+                respaldo.InsertarError(1, "frmConsultarCompra", ex.Message);
             }
-            dtwCompra.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -126,6 +135,11 @@ namespace SistemaFerreteria
         }
 
         private void txtIdProducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtwCompra_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

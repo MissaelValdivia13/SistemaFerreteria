@@ -46,5 +46,18 @@ namespace CapaNegocio
             return objCliente.consultaClientesConSaldo(opcion, valor);
         }
 
+        public DataSet ObtenerCobrosPorCliente(int idCliente)
+        {
+            return objCliente.ObtenerCobrosPorCliente(idCliente);
+        }
+        public DataSet ReporteClientesConSaldoPendiente()
+        {
+            return objCliente.ReporteClientesConSaldoPendiente();
+        }
+
+        public DataSet RankingClientesPorTotalVentas()
+        {
+            return objCliente.RankingClientesPorTotalVentas();
+        }
     }
 }

@@ -66,7 +66,7 @@ namespace SistemaFerreteria
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            ModalClientes modal = new ModalClientes();
+            ModalClientesVentas modal = new ModalClientesVentas();
             modal.ClienteSeleccionado += (id, nombre, telefono, domicilio, saldo) =>
             {
                 txtIdCliente.Text = id;

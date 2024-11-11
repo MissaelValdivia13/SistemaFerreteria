@@ -97,6 +97,69 @@ namespace CapaDatos
             }
 
         }
+
+
+        public DataSet reportePeriodo(string inicio, string fin)
+        {
+            using (DataSet data = new DataSet())
+            {
+                conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("VentasPorPeriodo", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@FechaInicio", inicio);
+                    comando.Parameters.AddWithValue("@FechaFin", fin);
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "VentasPeriodo");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
+        public DataSet reporteEmpleadoPeriodo(string empleado, string inicio, string fin)
+        {
+            using (DataSet data = new DataSet())
+            {
+                conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("VentasPorEmpleadoEnPeriodo", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@NombreEmpleado", empleado);
+                    comando.Parameters.AddWithValue("@FechaInicio", inicio);
+                    comando.Parameters.AddWithValue("@FechaFin", fin);
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "VentasEmpleadoPeriodo");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
+        public DataSet rankingVentasEmpleado(string inicio, string fin)
+        {
+            using (DataSet data = new DataSet())
+            {
+                conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("RankingEmpleadosPorVentasEnPeriodo", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@FechaInicio", inicio);
+                    comando.Parameters.AddWithValue("@FechaFin", fin);
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "VentasEmpleadoPeriodo");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
         public DataSet consultaDetalleVenta(int idVenta)
         {
             using (DataSet data = new DataSet())
@@ -134,9 +197,25 @@ namespace CapaDatos
                 return data;
             }
         }
+        public DataSet ObtenerComparacionVentasMensuales()
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta())
+                {
+                    using (SqlCommand comando = new SqlCommand("ComparacionVentasMensuales", conec))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
 
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            adaptador.Fill(data, "ComparacionVentasMensuales");
+                        }
+                    }
+                    conec.Close();
+                }
+                return data;
+            }
+        }
     }
-
-   
-
 }

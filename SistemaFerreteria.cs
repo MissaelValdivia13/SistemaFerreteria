@@ -13,7 +13,7 @@ namespace SistemaFerreteria
 {
     public partial class SistemaFerreteria : Form
     {
-        private int id;
+        public int id;
         private string nombre;
         public SistemaFerreteria(int id, string nombre)
         {
@@ -116,8 +116,7 @@ namespace SistemaFerreteria
 
         private void btnBitacoraErrores_Click(object sender, EventArgs e)
         {
-            frmBitacoraErrores frmBitacoraErrores = new frmBitacoraErrores();
-            AbrirFrom(frmBitacoraErrores);
+            
         }
 
         private void iconMenuItem3_Click(object sender, EventArgs e)
@@ -133,6 +132,49 @@ namespace SistemaFerreteria
         {
             frmConsultarCobro cobro = new frmConsultarCobro();
             AbrirFrom(cobro);
+        }
+
+        private void iconMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmReportes frmReportes = new frmReportes();
+            AbrirFrom(frmReportes);
+        }
+
+        private void iconMenuItem4_Click(object sender, EventArgs e)
+        {
+            frmBitacoraErrores frmBitacoraErrores = new frmBitacoraErrores();
+            AbrirFrom(frmBitacoraErrores);
+        }
+
+        private void btnRespaldar_Click(object sender, EventArgs e)
+        {
+            RespaldoCN respaldo = new RespaldoCN();
+            respaldo.BackupDatabase();
+            MessageBox.Show("Se genero el respaldo");
+        }
+
+        private void btnRest_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.InitialDirectory = "C:\\Respaldo-Sistema";
+            ofd.Filter = "bak files (*.bak)|*.bak";
+            ofd.RestoreDirectory = true;
+            if(ofd.ShowDialog() == DialogResult.OK)
+            {
+                if(ofd.OpenFile() != null)
+                {
+                    try
+                    {
+                        string filePath = ofd.FileName;
+                        RespaldoCN respaldo = new RespaldoCN();
+                        respaldo.RestoreDatabase(filePath);
+                        MessageBox.Show("Se ha restaurado de manera correcta la base de datos");
+                    }catch(Exception ex)
+                    {
+                        MessageBox.Show("Ocurrio un error al restaurar la base de datos" + ex.Message);
+                    }
+                }
+            }
         }
     }
 }

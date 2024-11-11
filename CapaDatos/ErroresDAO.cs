@@ -19,7 +19,7 @@ namespace CapaDatos
         {
             using (DataSet data = new DataSet())
             {
-                conec = objConecta.Conecta();
+                conec = objConecta.ConectaMantenimiento();
                 adaptador = new SqlDataAdapter("CONSULTARERRORES", conec);
                 adaptador.Fill(data, "SUBE");
                 conec.Close();

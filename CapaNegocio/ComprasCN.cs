@@ -32,5 +32,21 @@ namespace CapaNegocio
         {
             return compra.consultaDetalleCompra(id);
         }
+
+        public DataSet ComprasPorCategoria(string fechaInicio, string fechaFin)
+        {
+            return compra.ComprasPorCategoria(fechaInicio, fechaFin);
+        }
+
+
+        public DataSet ComprasPorProveedor(string fechaInicio, string fechaFin, int idProveedor)
+        {
+            return compra.ComprasPorProveedor(fechaInicio, fechaFin, idProveedor);
+        }
+
+        public DataSet ComparacionComprasMensuales()
+        {
+            return compra.ComparacionComprasMensuales();
+        }
     }
 }

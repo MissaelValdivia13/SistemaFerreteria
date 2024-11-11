@@ -47,10 +47,14 @@
             this.btnVentas = new FontAwesome.Sharp.IconMenuItem();
             this.btnRegistrarVenta = new FontAwesome.Sharp.IconMenuItem();
             this.btnConsultarVenta = new FontAwesome.Sharp.IconMenuItem();
-            this.btnBitacoraErrores = new FontAwesome.Sharp.IconMenuItem();
             this.btnCobros = new FontAwesome.Sharp.IconMenuItem();
             this.iconMenuItem3 = new FontAwesome.Sharp.IconMenuItem();
             this.btnConsultarCobros = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
+            this.btnBitacoraErrores = new FontAwesome.Sharp.IconMenuItem();
+            this.btnBitacora = new FontAwesome.Sharp.IconMenuItem();
+            this.btnRespaldar = new FontAwesome.Sharp.IconMenuItem();
+            this.btnRest = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -130,6 +134,7 @@
             this.iconMenuItem1,
             this.btnVentas,
             this.btnCobros,
+            this.iconMenuItem2,
             this.btnBitacoraErrores});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -293,7 +298,7 @@
             this.btnRegistrarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnRegistrarVenta.IconSize = 60;
             this.btnRegistrarVenta.Name = "btnRegistrarVenta";
-            this.btnRegistrarVenta.Size = new System.Drawing.Size(180, 28);
+            this.btnRegistrarVenta.Size = new System.Drawing.Size(152, 28);
             this.btnRegistrarVenta.Text = "Registrar";
             this.btnRegistrarVenta.Click += new System.EventHandler(this.btnRegistrarVenta_Click);
             // 
@@ -305,27 +310,9 @@
             this.btnConsultarVenta.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultarVenta.IconSize = 60;
             this.btnConsultarVenta.Name = "btnConsultarVenta";
-            this.btnConsultarVenta.Size = new System.Drawing.Size(180, 28);
+            this.btnConsultarVenta.Size = new System.Drawing.Size(152, 28);
             this.btnConsultarVenta.Text = "Consultar";
             this.btnConsultarVenta.Click += new System.EventHandler(this.btnConsultarVenta_Click);
-            // 
-            // btnBitacoraErrores
-            // 
-            this.btnBitacoraErrores.AutoSize = false;
-            this.btnBitacoraErrores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
-            this.btnBitacoraErrores.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.5F);
-            this.btnBitacoraErrores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.btnBitacoraErrores.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
-            this.btnBitacoraErrores.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
-            this.btnBitacoraErrores.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnBitacoraErrores.IconSize = 55;
-            this.btnBitacoraErrores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.btnBitacoraErrores.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
-            this.btnBitacoraErrores.Name = "btnBitacoraErrores";
-            this.btnBitacoraErrores.Size = new System.Drawing.Size(122, 70);
-            this.btnBitacoraErrores.Text = "Bitacora de Errores";
-            this.btnBitacoraErrores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.btnBitacoraErrores.Click += new System.EventHandler(this.btnBitacoraErrores_Click);
             // 
             // btnCobros
             // 
@@ -355,7 +342,7 @@
             this.iconMenuItem3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItem3.IconSize = 60;
             this.iconMenuItem3.Name = "iconMenuItem3";
-            this.iconMenuItem3.Size = new System.Drawing.Size(180, 28);
+            this.iconMenuItem3.Size = new System.Drawing.Size(152, 28);
             this.iconMenuItem3.Text = "Registrar";
             this.iconMenuItem3.Click += new System.EventHandler(this.iconMenuItem3_Click);
             // 
@@ -367,9 +354,88 @@
             this.btnConsultarCobros.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultarCobros.IconSize = 60;
             this.btnConsultarCobros.Name = "btnConsultarCobros";
-            this.btnConsultarCobros.Size = new System.Drawing.Size(180, 28);
+            this.btnConsultarCobros.Size = new System.Drawing.Size(152, 28);
             this.btnConsultarCobros.Text = "Consultar";
             this.btnConsultarCobros.Click += new System.EventHandler(this.btnConsultarCobros_Click);
+            // 
+            // iconMenuItem2
+            // 
+            this.iconMenuItem2.AutoSize = false;
+            this.iconMenuItem2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
+            this.iconMenuItem2.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.5F);
+            this.iconMenuItem2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
+            this.iconMenuItem2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem2.IconSize = 55;
+            this.iconMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.iconMenuItem2.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
+            this.iconMenuItem2.Name = "iconMenuItem2";
+            this.iconMenuItem2.Size = new System.Drawing.Size(122, 70);
+            this.iconMenuItem2.Text = "Reportes";
+            this.iconMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconMenuItem2.Click += new System.EventHandler(this.iconMenuItem2_Click);
+            // 
+            // btnBitacoraErrores
+            // 
+            this.btnBitacoraErrores.AutoSize = false;
+            this.btnBitacoraErrores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(58)))), ((int)(((byte)(62)))), ((int)(((byte)(63)))));
+            this.btnBitacoraErrores.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnBitacora,
+            this.btnRespaldar,
+            this.btnRest});
+            this.btnBitacoraErrores.Font = new System.Drawing.Font("Malgun Gothic Semilight", 10.5F);
+            this.btnBitacoraErrores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnBitacoraErrores.IconChar = FontAwesome.Sharp.IconChar.FileCircleQuestion;
+            this.btnBitacoraErrores.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnBitacoraErrores.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBitacoraErrores.IconSize = 55;
+            this.btnBitacoraErrores.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnBitacoraErrores.Margin = new System.Windows.Forms.Padding(50, 1, 1, 1);
+            this.btnBitacoraErrores.Name = "btnBitacoraErrores";
+            this.btnBitacoraErrores.Size = new System.Drawing.Size(122, 70);
+            this.btnBitacoraErrores.Text = "Utilerias";
+            this.btnBitacoraErrores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btnBitacoraErrores.Click += new System.EventHandler(this.btnBitacoraErrores_Click);
+            // 
+            // btnBitacora
+            // 
+            this.btnBitacora.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnBitacora.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnBitacora.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnBitacora.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnBitacora.IconSize = 60;
+            this.btnBitacora.Name = "btnBitacora";
+            this.btnBitacora.Size = new System.Drawing.Size(192, 24);
+            this.btnBitacora.Text = "Bitacora de Errores";
+            this.btnBitacora.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBitacora.Click += new System.EventHandler(this.iconMenuItem4_Click);
+            // 
+            // btnRespaldar
+            // 
+            this.btnRespaldar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnRespaldar.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnRespaldar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnRespaldar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRespaldar.IconSize = 60;
+            this.btnRespaldar.Name = "btnRespaldar";
+            this.btnRespaldar.Size = new System.Drawing.Size(192, 24);
+            this.btnRespaldar.Text = "Respaldar";
+            this.btnRespaldar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRespaldar.Click += new System.EventHandler(this.btnRespaldar_Click);
+            // 
+            // btnRest
+            // 
+            this.btnRest.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnRest.IconChar = FontAwesome.Sharp.IconChar.Users;
+            this.btnRest.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(179)))), ((int)(((byte)(181)))));
+            this.btnRest.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnRest.IconSize = 60;
+            this.btnRest.Name = "btnRest";
+            this.btnRest.Size = new System.Drawing.Size(192, 24);
+            this.btnRest.Text = "Restaurar";
+            this.btnRest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRest.Click += new System.EventHandler(this.btnRest_Click);
             // 
             // SistemaFerreteria
             // 
@@ -416,6 +482,10 @@
         private FontAwesome.Sharp.IconMenuItem btnCobros;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem3;
         private FontAwesome.Sharp.IconMenuItem btnConsultarCobros;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
+        private FontAwesome.Sharp.IconMenuItem btnBitacora;
+        private FontAwesome.Sharp.IconMenuItem btnRespaldar;
+        private FontAwesome.Sharp.IconMenuItem btnRest;
     }
 }
 

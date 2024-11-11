@@ -74,12 +74,20 @@ namespace SistemaFerreteria
 
             if (idEmpleado != -1)
             {
-                this.Hide(); 
+                this.Hide();
 
-                SistemaFerreteria ferreteria = new SistemaFerreteria(idEmpleado, nombre); 
-                ferreteria.Show(); 
+                try
+                {
+                    SistemaFerreteria ferreteria = new SistemaFerreteria(idEmpleado, nombre);
+                    ferreteria.Show();
 
-                ferreteria.FormClosed += (s, args) => this.Close(); 
+                    ferreteria.FormClosed += (s, args) => this.Dispose();
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Ocurrio un Error: " + ex.Message);
+                    RespaldoCN respaldo = new RespaldoCN();
+                    respaldo.InsertarError(0, "Iniciar sesion", ex.Message);
+                }
             }
             else
             {

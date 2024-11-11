@@ -36,6 +36,24 @@
     <Reference Include="FontAwesome.Sharp, Version=6.6.0.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>packages\FontAwesome.Sharp.6.6.0\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1652.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -54,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Encriptacion.cs" />
+    <Compile Include="FechaSeleccionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FechaSeleccionForm.Designer.cs">
+      <DependentUpon>FechaSeleccionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +126,12 @@
     <Compile Include="frmProducto.Designer.cs">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes.Designer.cs">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +143,18 @@
     </Compile>
     <Compile Include="ModalClientes.Designer.cs">
       <DependentUpon>ModalClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalClientesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalClientesVentas.Designer.cs">
+      <DependentUpon>ModalClientesVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModalEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModalEmpleados.Designer.cs">
+      <DependentUpon>ModalEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="ModalProductos.cs">
       <SubType>Form</SubType>
@@ -161,12 +203,21 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SistemaFerreteriaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SistemaFerreteriaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Ventas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FechaSeleccionForm.resx">
+      <DependentUpon>FechaSeleccionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormPago.resx">
       <DependentUpon>FormPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,11 +242,20 @@
     <EmbeddedResource Include="frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes.resx">
+      <DependentUpon>frmReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModalClientes.resx">
       <DependentUpon>ModalClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalClientesVentas.resx">
+      <DependentUpon>ModalClientesVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModalEmpleados.resx">
+      <DependentUpon>ModalEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModalProductos.resx">
       <DependentUpon>ModalProductos.cs</DependentUpon>
@@ -203,6 +263,18 @@
     <EmbeddedResource Include="ModalProveedores.resx">
       <DependentUpon>ModalProveedores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\CobrosPorCliente.rdlc" />
+    <EmbeddedResource Include="Reportes\ComprasProveedor.rdlc" />
+    <EmbeddedResource Include="Reportes\RankingClientes.rdlc" />
+    <EmbeddedResource Include="Reportes\RankingEmpleadosPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteClientesSaldoP.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteComparacionCompras.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteComparacionVentas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteComprasCategoria.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteProductosRentables.rdlc" />
+    <EmbeddedResource Include="Reportes\VentasEmpleadoPeriodo.rdlc" />
+    <EmbeddedResource Include="Reportes\VentasPeriodo.rdlc" />
     <EmbeddedResource Include="SistemaFerreteria.resx">
       <DependentUpon>SistemaFerreteria.cs</DependentUpon>
     </EmbeddedResource>
@@ -240,6 +312,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SistemaFerreteriaDataSet.xsc">
+      <DependentUpon>SistemaFerreteriaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SistemaFerreteriaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SistemaFerreteriaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SistemaFerreteriaDataSet.xss">
+      <DependentUpon>SistemaFerreteriaDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -249,6 +332,21 @@
       <Project>{1549d6ca-67c2-4af2-8f1b-568201b8d0fd}</Project>
       <Name>CapaNegocio</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

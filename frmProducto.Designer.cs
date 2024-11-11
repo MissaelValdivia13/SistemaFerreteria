@@ -152,6 +152,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(1047, 538);
             this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // txtMaximo
             // 

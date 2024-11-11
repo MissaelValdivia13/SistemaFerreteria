@@ -121,6 +121,35 @@ namespace CapaDatos
             }
         }
 
+        public DataSet ObtenerRankingProductos()
+        {
+            using (DataSet data = new DataSet())
+            {
+                conec = objConecta.Conecta();
+                adaptador = new SqlDataAdapter("RankingProductosPorCategoria", conec);
+                adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                adaptador.Fill(data, "RankingProductos");
+                conec.Close();
+                return data;
+            }
+        }
+
+        public DataSet ObtenerProductosMasRentables()
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta())
+                {
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter("ReporteProductosMasRentables", conec))
+                    {
+                        adaptador.SelectCommand.CommandType = CommandType.StoredProcedure;
+                        adaptador.Fill(data, "ProductosMasRentables");
+                    }
+                }
+                return data;
+            }
+        }
+
     }
 }
         

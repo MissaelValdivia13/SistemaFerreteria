@@ -89,16 +89,25 @@ namespace SistemaFerreteria
 
         private void llenarDtw()
         {
-            DataSet ds = proveedores.consultaProveedores();
-            if (ds.Tables.Count > 0)
+            try
             {
-                dtwProveedores.DataSource = ds.Tables[0];
+                DataSet ds = proveedores.consultaProveedores();
+                if (ds.Tables.Count > 0)
+                {
+                    dtwProveedores.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para mostrar");
+                }
+                dtwProveedores.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se encontraron datos para mostrar");
+                MessageBox.Show("Ocurrio un Error: " + ex.Message);
+                RespaldoCN respaldo = new RespaldoCN();
+                respaldo.InsertarError(1, "frmProveedor", ex.Message);
             }
-            dtwProveedores.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

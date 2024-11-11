@@ -132,6 +132,71 @@ namespace CapaDatos
             }
         }
 
+        public DataSet ComprasPorCategoria(string fechaInicio, string fechaFin)
+        {
+            using (DataSet data = new DataSet())
+            {
+                SqlConnection conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("ComprasPorCategoriaPorPeriodo", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                    comando.Parameters.AddWithValue("@FechaFin", fechaFin);
+
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "ComprasPorCategoria");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
+        public DataSet ComprasPorProveedor(string fechaInicio, string fechaFin, int idProveedor)
+        {
+            using (DataSet data = new DataSet())
+            {
+                SqlConnection conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("ComprasPorProveedorPorPeriodo", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    comando.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                    comando.Parameters.AddWithValue("@FechaFin", fechaFin);
+                    comando.Parameters.AddWithValue("@IdProveedor", idProveedor);
+
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "ComprasPorProveedor");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
+        public DataSet ComparacionComprasMensuales()
+        {
+            using (DataSet data = new DataSet())
+            {
+                using (SqlConnection conec = objConecta.Conecta()) 
+                {
+                    using (SqlCommand comando = new SqlCommand("ComparacionComprasMensuales", conec))
+                    {
+                        comando.CommandType = CommandType.StoredProcedure;
+
+                        using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                        {
+                            adaptador.Fill(data, "ComparacionComprasMensuales");
+                        }
+                    }
+                    conec.Close();
+                }
+                return data;
+            }
+        }
 
     }
 }

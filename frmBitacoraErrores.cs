@@ -27,16 +27,35 @@ namespace SistemaFerreteria
 
         public void llenarDetalleCompra()
         {
-            DataSet ds = error.consultaClientes();
-            if (ds.Tables.Count > 0)
+            try
             {
-                dtwBitacora.DataSource = ds.Tables[0];
-            }
-            else
+                DataSet ds = error.consultaClientes();
+                if (ds.Tables.Count > 0)
+                {
+                    dtwBitacora.DataSource = ds.Tables[0];
+                }
+                else
+                {
+                    MessageBox.Show("No se encontraron datos para mostrar");
+                }
+                dtwBitacora.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }catch (Exception ex)
             {
-                MessageBox.Show("No se encontraron datos para mostrar");
+
+                MessageBox.Show("Ocurrio un Error: " + ex.Message);
+                RespaldoCN respaldo = new RespaldoCN();
+                respaldo.InsertarError(1, "frmBitacora de Errores", ex.Message);
             }
-            dtwBitacora.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void dtwBitacora_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

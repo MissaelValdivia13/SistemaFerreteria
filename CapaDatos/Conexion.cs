@@ -21,7 +21,21 @@ namespace CapaDatos
             catch (Exception ex)
             {
                 Debug.WriteLine($"Error al conectar: {ex.Message}");
-                // Manejo de errores según sea necesario
+            }
+            return con;
+        }
+
+        public SqlConnection ConectaMantenimiento()
+        {
+            SqlConnection con = new SqlConnection("server=MISSAEL\\SQLEXPRESS;database=Mantenimiento;user=root; integrated security= true");
+            try
+            {
+                con.Open(); 
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error al conectar: {ex.Message}");
+                
             }
             return con;
         }

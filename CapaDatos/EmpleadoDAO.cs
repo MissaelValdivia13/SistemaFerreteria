@@ -96,22 +96,28 @@ namespace CapaDatos
         }
         public int ValidarEmpleado(string nombre, string contra)
         {
-            conec = objConecta.Conecta();
-            int idEmpleado = -1; 
+            try
+            {
+                conec = objConecta.Conecta();
+                int idEmpleado = -1;
                 comando = new SqlCommand("VALIDAREMPLEADO", conec);
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.Add("@Nombre", SqlDbType.VarChar).Value = nombre;
                 comando.Parameters.Add("@Contrasena", SqlDbType.VarChar).Value = contra;
 
-            var result = comando.ExecuteScalar();
+                var result = comando.ExecuteScalar();
 
-            if (result != null)
+                if (result != null)
                 {
                     idEmpleado = Convert.ToInt32(result);
                 }
-            conec.Close();
-            return idEmpleado; 
+                conec.Close();
+                return idEmpleado;
+            }catch(Exception ex)
+            {
+                return 0;
+            }
         }
 
     }

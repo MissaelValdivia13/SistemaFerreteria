@@ -129,6 +129,63 @@ namespace CapaDatos
             }
         }
 
+        public DataSet ObtenerCobrosPorCliente(int idCliente)
+        {
+            using (DataSet data = new DataSet())
+            {
+                SqlConnection conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("ReporteCobrosPorCliente", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+                    comando.Parameters.AddWithValue("@idCliente", idCliente);
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "CobrosCliente");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
+        public DataSet ReporteClientesConSaldoPendiente()
+        {
+            using (DataSet data = new DataSet())
+            {
+                SqlConnection conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("ReporteClientesConSaldoPendiente", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "ClientesConSaldoPendiente");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
+        public DataSet RankingClientesPorTotalVentas()
+        {
+            using (DataSet data = new DataSet())
+            {
+                SqlConnection conec = objConecta.Conecta();
+                using (SqlCommand comando = new SqlCommand("RankingClientesPorTotalVentas", conec))
+                {
+                    comando.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adaptador = new SqlDataAdapter(comando))
+                    {
+                        adaptador.Fill(data, "ClientesRankingVentas");
+                    }
+                }
+                conec.Close();
+                return data;
+            }
+        }
+
 
 
     }

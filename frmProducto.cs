@@ -88,15 +88,24 @@ namespace SistemaFerreteria
         //Llena la combo de categorias con el concepto de cada categoria
         private void llenarCboCategorias()
         {
-            DataSet data =  categoria.consultarCategoria();
-            if (data != null && data.Tables.Count > 0)
+            try
             {
-                cboCategoria.Items.Clear();
-
-                foreach (DataRow row in data.Tables["SUBE"].Rows)
+                DataSet data = categoria.consultarCategoria();
+                if (data != null && data.Tables.Count > 0)
                 {
-                    cboCategoria.Items.Add(row[1].ToString());
+                    cboCategoria.Items.Clear();
+
+                    foreach (DataRow row in data.Tables["SUBE"].Rows)
+                    {
+                        cboCategoria.Items.Add(row[1].ToString());
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un Error: " + ex.Message);
+                RespaldoCN respaldo = new RespaldoCN();
+                respaldo.InsertarError(1, "frmProducto", ex.Message);
             }
         }
 
@@ -159,6 +168,11 @@ namespace SistemaFerreteria
                 btnModificar.Enabled = true;
                 btnGrabar.Enabled = false;
             }
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
